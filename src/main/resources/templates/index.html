@@ -1,10 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/bootstrop/css/bootstrap.min.css">
+    <script src="../static/bootstrop/js/bootstrap.min.js"></script>
+    <script src="../static/jquery/jquery-1.11.1.js"></script>
+    <title>主页</title>
+
+    <style>
+        @font-face {
+            font-family: 'Glyphicons Halflings';
+            src: url('../static/bootstrop/fonts/glyphicons-halflings-regular.eot');
+            src: url('../static/bootstrop/fonts/glyphicons-halflings-regular.eot?#iefix')
+            format('embedded-opentype'), url('../static/bootstrop/fonts/glyphicons-halflings-regular.woff')
+            format('woff'), url('../static/bootstrop/fonts/glyphicons-halflings-regular.ttf')
+            format('truetype'), url('../static/bootstrop/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-inverse {
+            background-color: #1d2127;
+            border-color: #1d2127;
+        }
+        .x-navigation {
+            width: 1087px;
+            height: 50px;
+            padding: 0px;
+            margin: 0px;
+            float: left;
+            list-style: none;
+            display: block;
+            z-index: 3;
+            position: relative;
+            right: -183px;
+        }
+        .x-navigation li {
+            float: left;
+            width: 40px;
+            height: 40px;
+            /*border: 1px solid #e7e0e0;*/
+            display: block;
+            position: relative;
+            left: 915px;
+            top: 5px;
+        }
+        li:hover{
+            background-color: rgba(255,255,255,0.1);
+        }
+        .x-navigation .user{
+            width: 101px;
+        }
+        .xn-icon{
+            float: right;
+        }
+        .glyphicon-log-out:before {
+            content: "\e163";
+            color: white;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+        .glyphicon-comment:before {
+            content: "\e111";
+            color: white;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+        .glyphicon-cog:before {
+            content: "\e019";
+            color: white;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+        .glyphicon-user:before {
+            content: "\e008";
+            color: white;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+        .username {
+            color: white;
+            font-family: fantasy;
+            font-size: large;
+            position: relative;
+            top: -14px;
+            left: 39px;
+        }
+    </style>
 </head>
 <body>
-<h1>主页</h1>
+   <nav class="navbar navbar-inverse">
+       <div class="container">
+           <ul class="x-navigation">
+               <li>
+                   <a href="#">
+                       <span class="glyphicon glyphicon-cog"></span>
+                   </a>
+               </li>
+               <li>
+                   <a href="#">
+                       <span class="glyphicon glyphicon-comment"></span>
+                   </a>
+               </li>
+               <li class="user">
+                   <span class="glyphicon glyphicon-user"></span>
+                   <div class="username" th:text="${session.user.username}"></div>
+               </li>
+               <li class="xn-icon">
+                   <a href="#">
+                       <span class="glyphicon glyphicon-log-out"></span>
+                   </a>
+               </li>
+           </ul>
+       </div>
+   </nav>
 </body>
 </html>
