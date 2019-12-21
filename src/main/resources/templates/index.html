@@ -23,10 +23,19 @@
             margin: 0;
             padding: 0;
         }
-        .navbar-inverse {
-            background-color: #1d2127;
-            border-color: #1d2127;
+
+        .navbar {
+            position: relative;
+            min-height: 50px;
+            margin-bottom: 0px;
+            border: 1px solid transparent;
         }
+
+        .navbar-inverse {
+            background-color: #3c8dbc;
+            border-color: #3c8dbc;
+        }
+
         .x-navigation {
             width: 1087px;
             height: 50px;
@@ -41,15 +50,15 @@
         }
         .x-navigation li {
             float: left;
-            width: 40px;
+            width: 56px;
             height: 40px;
             display: block;
             position: relative;
-            left: 915px;
+            left: 843px;
             top: 5px;
         }
         li:hover{
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(0,0,0,0.1);
         }
         .x-navigation .user{
             width: 101px;
@@ -61,29 +70,29 @@
             content: "\e163";
             color: white;
             position: relative;
-            top: 10px;
-            left: 10px;
+            top: 12px;
+            left: 21px;
         }
         .glyphicon-comment:before {
             content: "\e111";
             color: white;
             position: relative;
-            top: 10px;
-            left: 10px;
+            top: 12px;
+            left: 21px;
         }
         .glyphicon-cog:before {
             content: "\e019";
             color: white;
             position: relative;
-            top: 10px;
-            left: 10px;
+            top: 12px;
+            left: 21px;
         }
         .glyphicon-user:before {
             content: "\e008";
             color: white;
             position: relative;
-            top: 10px;
-            left: 10px;
+            top: 12px;
+            left: 14px;
         }
         .username {
             color: white;
@@ -91,12 +100,88 @@
             font-size: large;
             position: relative;
             top: -14px;
-            left: 39px;
+            left: 44px;
+        }
+        .left{
+            float: left;
+            width: 230px;
+            height: 50px;
+            background: rgba(0,0,0,0.1);
+        }
+        .log {
+            float: left;
+            width: 200px;
+            height: 49px;
+            color: white;
+            padding-top: 4px;
+            font-size: initial;
+            font-weight: 700;
+            font-family: none;
+        }
+        b {
+            font-size: x-large;
+            font-weight: bold;
+            position: relative;
+            top: 2px;
+            left: -6px;
+        }
+        .sidebar {
+            margin: 0;
+            width: 230px;
+            height: 668px;
+            border: 1px solid black;
+            position: relative;
+            top: -2px;
+        }
+        .user-panel {
+            width: 230px;
+            height: 65px;
+            background: #222D32;
+            border: 1px solid;
+            position: relative;
+            left: -17px;
+        }
+        .left-image {
+            width: 45px;
+            height: 45px;
+            position: relative;
+            top: 9px;
+            left: 24px;
+        }
+        .img-circle{
+            width: 45px;
+            height: 45px;
+        }
+        .left-info {
+            width: 115px;
+            height: 45px;
+            position: relative;
+            top: -35px;
+            left: 85px;
+        }
+        .left-username {
+            color: white;
+            font-family: cursive;
+            font-size: larger;
+            position: relative;
+            top: 3px;
+            left: 37px;
+        }
+        .left-sn {
+            color: white;
+            font-size: smaller;
+            font-family: monospace;
+            position: relative;
+            top: 3px;
+            left: 19px;
         }
     </style>
 </head>
 <body>
    <nav class="navbar navbar-inverse">
+       <div class="left container">
+           <span class="log"><b>welcome</b>come back</span>
+       </div>
        <div class="container">
            <ul class="x-navigation">
                <li>
@@ -114,11 +199,24 @@
                    <div class="username" th:text="${session.user.username}"></div>
                </li>
                <li class="xn-icon">
-                   <a href="#">
+                   <a href="dorm">
                        <span class="glyphicon glyphicon-log-out"></span>
                    </a>
                </li>
            </ul>
+       </div>
+   </nav>
+   <nav class="navbar navbar-left">
+       <div class="sidebar container">
+           <div class="user-panel">
+               <div class="left-image">
+                   <img src="../static/pic/1.png" class="img-circle">
+               </div>
+               <div class="left-info">
+                   <div class="left-username" th:text="${session.user.username}"></div>
+                   <div class="left-sn" th:if="${session.Type == 0}" th:text="${session.user.sn}"></div>
+               </div>
+           </div>
        </div>
    </nav>
 </body>
