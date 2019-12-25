@@ -12,8 +12,142 @@
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <style>
+        .form-paw {
+            width: 473px;
+            height: 497px;
+            border: 1px solid gray;
+            background-color: white;
+            position: absolute;
+            top: 102px;
+            left: 459px;
+        }
+
+        .form-top {
+            height: 50px;
+            border-bottom: 1px solid #ced6e0;
+            background-color: #f1f2f6;
+        }
+
+        .form-top span {
+            font-size: large;
+            font-family: cursive;
+            position: relative;
+            top: 13px;
+            left: 22px;
+        }
+
+        .form-top p {
+            color: blueviolet;
+            font-size: larger;
+            cursor: pointer;
+            position: relative;
+            top: -12px;
+            left: 444px;
+        }
+
+        .form-main {
+            width: 320px;
+        }
+
+        .form-control {
+            margin: 12px;
+            position: relative;
+            top: 57px;
+            display: block;
+            left: 115px;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        .one {
+            font-family: cursive;
+            font-weight: 800;
+            color: dimgrey;
+            position: relative;
+            top: 76px;
+            left: -243px;
+        }
+
+        .btna {
+            position: relative;
+            top: 71px;
+            left: 39px;
+        }
+
+        .back {
+            width: 100%;
+            height: 720px;
+            float: left;
+            background-color: rgba(248, 236, 236, 0.2);
+        }
+    </style>
+
+    <script type="text/javascript">
+        function mian() {
+            alert("a");
+            var elem=document.getElementById("eye");
+            elem.className="back show";
+        }
+        function md(){
+            alert("a");
+            var elem=document.getElementById("eye");
+            elem.className="back hide";
+        }
+    </script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+
+<div class="back hide" id="eye">
+    <div class="form-paw">
+        <div class="form-top">
+            <span>修改密码</span>
+            <p>x</p>
+        </div>
+        <div class="form-main">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <span class="one">原始密码</span>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="one">新密码</span>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span class="one">确认密码</span>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                </div>
+                <div class="btna">
+                    <button type="button" class="btn btn-default" onclick="md()">提交</button>
+                    <!--<input id="submitBtn" type="button" class="btn btn-lg btn-primary" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">-->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 <div class="wrapper">
 
     <header class="main-header">
@@ -115,7 +249,7 @@
                                 <img src="../static/pic/2.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Alexander Pierce - Web Developer
+                                    好好学习,天天向上
                                     <small>Member since Nov. 2012</small>
                                 </p>
                             </li>
@@ -123,20 +257,20 @@
                             <li class="user-body">
                                 <div class="row">
                                     <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
+                                        <a href="#" onclick="mian()">修改密码</a>
                                     </div>
                                     <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
+                                        <a href="#">上传头像</a>
                                     </div>
                                     <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
+                                        <a href="#">个性签名</a>
                                     </div>
                                 </div>
                             </li>
                             <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                </div>
+                                <!--<div class="pull-left">-->
+                                    <!--<a href="#" class="btn btn-default btn-flat">Profile</a>-->
+                                <!--</div>-->
                                 <div class="pull-right">
                                     <a href="/dorm" class="btn btn-default btn-flat">退出</a>
                                 </div>
