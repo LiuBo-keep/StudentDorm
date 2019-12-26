@@ -17,11 +17,12 @@
         .form-paw {
             width: 473px;
             height: 497px;
+            z-index: 666677;
             border: 1px solid gray;
             background-color: white;
             position: absolute;
-            top: 102px;
-            left: 459px;
+            top: 52px;
+            left: 646px;
         }
 
         .form-top {
@@ -91,72 +92,80 @@
 
         .back {
             width: 100%;
-            height: 720px;
             float: left;
-            background-color: rgba(248, 236, 236, 0.2);
+            background-color: white;
+        }
+
+        .bacl {
+            width: 100%;
+            height: 721px;
+            z-index: 666666;
+            background-color: rgba(0, 0, 0, 0.3);
+            position: absolute;
         }
     </style>
 
     <script type="text/javascript">
         function mian() {
-            alert("a");
-            var elem=document.getElementById("eye");
-            elem.className="back show";
+            var elem1 = document.getElementById("eye");
+            var elem2 = document.getElementById("foot");
+            elem1.className = "back show";
+            elem2.className = "bacl show"
         }
-        function md(){
-            alert("a");
-            var elem=document.getElementById("eye");
-            elem.className="back hide";
+
+        function md() {
+            var elem1 = document.getElementById("eye");
+            var elem2 = document.getElementById("foot");
+            elem1.className = "back hide";
+            elem2.className = "bacl hide"
         }
     </script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
-<div class="back hide" id="eye">
-    <div class="form-paw">
-        <div class="form-top">
-            <span>修改密码</span>
-            <p>x</p>
-        </div>
-        <div class="form-main">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <span class="one">原始密码</span>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+<div class="bacl hidden" id="foot"></div>
+
+<div class="wrapper" th:fragment="passwoed">
+    <div class="back hide" id="eye">
+        <div class="form-paw">
+            <div class="form-top">
+                <span>修改密码</span>
+                <p onclick="md()">x</p>
+            </div>
+            <div class="form-main">
+                <form class="form-horizontal" action="student" method="post">
+                    <div class="form-group">
+                        <span class="one">原始密码</span>
+                        <div class="col-sm-10">
+                            <input type="text" name="oldPassword" class="form-control" id="inputPassword3" placeholder="Password">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <span class="one">新密码</span>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                    <div class="form-group">
+                        <span class="one">新密码</span>
+                        <div class="col-sm-10">
+                            <input type="text" name="newPassword1" class="form-control" id="inputPassword3" placeholder="Password">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <span class="one">确认密码</span>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                    <div class="form-group">
+                        <span class="one">确认密码</span>
+                        <div class="col-sm-10">
+                            <input type="text" name="newPassword2" class="form-control" id="inputPassword3" placeholder="Password">
+                        </div>
                     </div>
-                </div>
-                <div class="btna">
-                    <button type="button" class="btn btn-default" onclick="md()">提交</button>
-                    <!--<input id="submitBtn" type="button" class="btn btn-lg btn-primary" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">-->
-                </div>
-            </form>
+                    <div class="btna">
+                        <!--<button type="submit" class="btn btn-default" onclick="md()">提交</button>-->
+                        <input type="submit" class="btn btn-default" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-
-
-<div class="wrapper">
 
     <header class="main-header">
-
         <a href="#" class="logo">
             <span class="logo-mini"><b>A</b>LT</span>
             <span class="logo-lg"><b>Admin</b>LTE</span>
         </a>
-
         <nav class="navbar navbar-static-top" role="navigation">
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                 <span class="sr-only">Toggle navigation</span>
@@ -175,7 +184,8 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                                <img src="dist/img/user2-160x160.jpg" class="img-circle"
+                                                     alt="User Image">
                                             </div>
                                             <h4>
                                                 Support Team
@@ -224,7 +234,8 @@
                                                 <small class="pull-right">20%</small>
                                             </h3>
                                             <div class="progress xs">
-                                                <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                                                <div class="progress-bar progress-bar-aqua" style="width: 20%"
+                                                     role="progressbar"
                                                      aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                                                     <span class="sr-only">20% Complete</span>
                                                 </div>
@@ -269,7 +280,7 @@
                             </li>
                             <li class="user-footer">
                                 <!--<div class="pull-left">-->
-                                    <!--<a href="#" class="btn btn-default btn-flat">Profile</a>-->
+                                <!--<a href="#" class="btn btn-default btn-flat">Profile</a>-->
                                 <!--</div>-->
                                 <div class="pull-right">
                                     <a href="/dorm" class="btn btn-default btn-flat">退出</a>
@@ -376,8 +387,8 @@
                 <small>Optional description</small>
             </h1>
             <!--<ol class="breadcrumb">-->
-                <!--<li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>-->
-                <!--<li class="active">Here</li>-->
+            <!--<li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>-->
+            <!--<li class="active">Here</li>-->
             <!--</ol>-->
         </section>
 
