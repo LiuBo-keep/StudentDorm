@@ -1,27 +1,29 @@
 package com.hp.studentsushe.controller;
 
-import org.springframework.stereotype.Controller;
+import com.hp.studentsushe.utils.JsonResult;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
 
-@Controller
+@RestController
+@RequestMapping("/alter")
 public class AlterationController {
 
+    private final Logger log= LoggerFactory.getLogger(AlterationController.class);
     /**
      * 学生修改密码
      * @return
      */
     @PostMapping("/student")
-    public Map<String,Object> StudentAlter(
+    public JsonResult StudentAlter(
             @RequestParam("oldPassword") String oldPassword,
             @RequestParam("newPassword1") String newPassword1,
             @RequestParam("newPassword2") String newPassword2
     ){
-        Map<String,Object> map=new HashMap<String,Object>();
-        System.out.println(oldPassword+"--"+newPassword1);
-        return map;
+        return new JsonResult(0,"aaaaa");
     }
 }
