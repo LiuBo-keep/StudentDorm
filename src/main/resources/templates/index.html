@@ -433,7 +433,7 @@
                         <li><a href="#">Link in level 2</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
+                <li th:if="${session.Type}==1" class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>学生管理</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -444,7 +444,7 @@
                         <li><a href="#">Link in level 2</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
+                <li th:if="${session.Type}==1" class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>楼宇管理</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -455,7 +455,7 @@
                         <li><a href="#">Link in level 2</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
+                <li th:if="${session.Type}==1" class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>宿舍管理</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -477,7 +477,7 @@
                         <li><a href="#">Link in level 2</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
+                <li th:if="${session.Type}==1" class="treeview">
                     <a href="#"><i class="fa fa-dashboard"></i> <span>学生寝室调换</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -488,7 +488,7 @@
                         <li><a href="#">Link in level 2</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
+                <li th:if="${session.Type}==1" class="treeview">
                     <a href="#"><i class="fa fa-dashboard"></i> <span>学生迁出登记</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -499,7 +499,7 @@
                         <li><a href="#">Link in level 2</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
+                <li th:if="${session.Type}==1" class="treeview">
                     <a href="#"><i class="fa fa-dashboard"></i> <span>学生缺寝记录</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
