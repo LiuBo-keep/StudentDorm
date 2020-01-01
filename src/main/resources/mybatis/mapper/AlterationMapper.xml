@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hp.studentsushe.dao.AlterationDao">
+
+    <select id="findPassword" parameterType="String" resultType="com.hp.studentsushe.bean.Student">
+        select * from student where password=#{password}
+    </select>
+
+    <update id="updateAlteration" parameterType="com.hp.studentsushe.bean.Student">
+        update student set password=#{password} where username=#{username}
+    </update>
+</mapper>

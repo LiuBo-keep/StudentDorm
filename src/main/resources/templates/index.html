@@ -200,20 +200,23 @@
             console.log(data);
             $.ajax({
                 type: "post",
-                url: "/alter/student",
+                url: "/Alter/student",
                 data: data,
                 dataType: "json", //返回数据类型
-                success: function(alter){
-
-                    // if(1 == result.state){
-                    //     console.log(result);
-                    //     window.parent.location.href="index";
-                    // } else{
-                    //     console.log(result);
-                    //     alert(result.message);
-                    //     $("input[name='vcode']").val("");//清空验证码输入框
-                    // }
-                    console.log(alter)
+                success: function(result){
+                    console.log(result);
+                    if(1 == result.message){
+                        console.log(result);
+                    } else{
+                        console.log(result);
+                        $("input[name='oldPassword']").val("");//清空验证码输入框
+                        $("input[name='newPassword1']").val("");//清空验证码输入框
+                        $("input[name='newPassword2']").val("");//清空验证码输入框
+                        //输出错误信息
+                        var sp=document.getElementById("err");
+                        console.log(sp)
+                        sp.innerText=result.message;
+                    }
                 }
             });
         }
@@ -233,7 +236,7 @@
                 <p onclick="md()">x</p>
             </div>
             <div class="form-main">
-                <form method="post" id="form" class="form-horizontal">
+                <form id="form" method="post" class="form-horizontal">
                     <div class="form-group">
                         <span class="one">原始密码</span>
                         <div class="col-sm-10">
@@ -257,8 +260,9 @@
                     </div>
                     <div class="btna">
                         <!--<button type="submit" class="btn btn-default" onclick="md()">提交</button>-->
-                        <input id="subBtn" onclick="xiu()" type="submit" class="btn btn-default"
-                               value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
+                        <input id="subBtn" onclick="xiu()" type="button" class="btn btn-default"
+                               value="&nbsp;提&nbsp;&nbsp;&nbsp;&nbsp;交&nbsp;">
+                        <span  id="err" style="width: 60px;height: 30px;color:red;position: relative;left: 20px"></span>
                     </div>
                 </form>
             </div>
@@ -300,8 +304,8 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle"
-                                                     alt="User Image">
+                                                <img src="#" class="img-circle"
+                                                     alt="#">
                                             </div>
                                             <h4>
                                                 Support Team
@@ -445,17 +449,6 @@
                     </ul>
                 </li>
                 <li th:if="${session.Type}==1" class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>楼宇管理</span>
-                        <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">Link in level 2</a></li>
-                        <li><a href="#">Link in level 2</a></li>
-                    </ul>
-                </li>
-                <li th:if="${session.Type}==1" class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>宿舍管理</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -466,8 +459,8 @@
                         <li><a href="#">Link in level 2</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-link"></i> <span>学生入住登记</span>
+                <li th:if="${session.Type}==1" class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>出入登记管理</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -478,7 +471,7 @@
                     </ul>
                 </li>
                 <li th:if="${session.Type}==1" class="treeview">
-                    <a href="#"><i class="fa fa-dashboard"></i> <span>学生寝室调换</span>
+                    <a href="#"><i class="fa fa-link"></i> <span>缴费信息学查询</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -489,7 +482,7 @@
                     </ul>
                 </li>
                 <li th:if="${session.Type}==1" class="treeview">
-                    <a href="#"><i class="fa fa-dashboard"></i> <span>学生迁出登记</span>
+                    <a href="#"><i class="fa fa-dashboard"></i> <span>退宿登记</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -499,8 +492,52 @@
                         <li><a href="#">Link in level 2</a></li>
                     </ul>
                 </li>
-                <li th:if="${session.Type}==1" class="treeview">
-                    <a href="#"><i class="fa fa-dashboard"></i> <span>学生缺寝记录</span>
+                <li th:if="${session.Type}==0" class="treeview">
+                    <a href="#"><i class="fa fa-dashboard"></i> <span>个人信息管理</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#">Link in level 2</a></li>
+                        <li><a href="#">Link in level 2</a></li>
+                    </ul>
+                </li>
+                <li th:if="${session.Type}==0" class="treeview">
+                    <a href="#"><i class="fa fa-dashboard"></i> <span>入住信息登记</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#">Link in level 2</a></li>
+                        <li><a href="#">Link in level 2</a></li>
+                    </ul>
+                </li>
+                <li th:if="${session.Type}==0" class="treeview">
+                    <a href="#"><i class="fa fa-dashboard"></i> <span>门禁记录查询</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#">Link in level 2</a></li>
+                        <li><a href="#">Link in level 2</a></li>
+                    </ul>
+                </li>
+                <li th:if="${session.Type}==0" class="treeview">
+                    <a href="#"><i class="fa fa-dashboard"></i> <span>生活服务缴费</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#">Link in level 2</a></li>
+                        <li><a href="#">Link in level 2</a></li>
+                    </ul>
+                </li>
+                <li th:if="${session.Type}==0" class="treeview">
+                    <a href="#"><i class="fa fa-dashboard"></i> <span>评价建议</span>
                         <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
@@ -538,15 +575,15 @@
 
     <aside class="control-sidebar control-sidebar-dark">
         <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            <li class="active"><a href="#" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+            <li><a href="#" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="control-sidebar-home-tab">
                 <h3 class="control-sidebar-heading">Recent Activity</h3>
                 <ul class="control-sidebar-menu">
                     <li>
-                        <a href="javascript:;">
+                        <a href="#">
                             <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
                             <div class="menu-info">
@@ -561,7 +598,7 @@
                 <h3 class="control-sidebar-heading">Tasks Progress</h3>
                 <ul class="control-sidebar-menu">
                     <li>
-                        <a href="javascript:;">
+                        <a href="#">
                             <h4 class="control-sidebar-subheading">
                                 Custom Template Design
                                 <span class="pull-right-container">
