@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
 
 
 @RestController
@@ -73,7 +76,37 @@ public class AlterationController {
      * @return JsonResult
      */
     @PostMapping("/pic")
-    public JsonResult updatePic(MultipartFile file){
-        return null;
+    public JsonResult updatePic(MultipartFile photo,
+                                HttpSession session
+    ) throws IOException {
+       if (photo!=null){
+           if (photo.getSize()<10485760){
+               //获取文件扩展名
+               String suffix=photo.getOriginalFilename().substring(photo.getOriginalFilename().lastIndexOf(".")+1,photo.getOriginalFilename().length());
+               if ("jpg,png,gif,jpeg".contains(suffix.toLowerCase())){
+                   //用uuid给图片重新命名
+                   String uuid=UUID.randomUUID().toString().toLowerCase().replace("-","");
+                   String newName=uuid.concat("."+suffix);
+
+                   //将文件保存在本地磁盘
+                   File file=new File("M:\\photo\\"+newName);
+                   if (!file.exists()){
+                       file.mkdirs();//判断文件加是否存，不存在就创建
+                   }
+
+                   photo.transferTo(file);
+
+                   Student student=(Student) session.getAttribute("alteration");
+                   log.info(student.toString());
+                   return new JsonResult(1,"上传成功");
+               }else {
+                   return new JsonResult(0,"您上传的文件格式不对，请上传jpg,png,gif,jpeg格式的图片");
+               }
+           }else {
+               return new JsonResult(0,"文件大小超过14M，请上传小于10M的图片");
+           }
+       }else {
+           return new JsonResult(0,"请选择文件");
+       }
     }
 }

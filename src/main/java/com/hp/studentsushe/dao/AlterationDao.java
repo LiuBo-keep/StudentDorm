@@ -20,4 +20,11 @@ public interface AlterationDao {
      * @return int
      */
     public int updateAlteration(Student student);
+
+    /**
+     * 修改头像
+     * @param student
+     * @return
+     */
+    public int updatePhone(Student student);
 }
