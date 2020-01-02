@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 
@@ -65,5 +66,14 @@ public class AlterationController {
         }else {
             return new JsonResult(0,"密码修改失败");
         }
+    }
+
+    /**
+     * 修改头像
+     * @return JsonResult
+     */
+    @PostMapping("/pic")
+    public JsonResult updatePic(MultipartFile file){
+        return null;
     }
 }
