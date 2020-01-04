@@ -6,6 +6,15 @@ public class User implements Serializable {
     private Long id;//用户id 主键  自增
     private String username;//用户名
     private String password;//密码
+    private String photo;//头像
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
     public Long getId() {
         return id;
@@ -37,6 +46,7 @@ public class User implements Serializable {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", photo='" + photo + '\'' +
                 '}';
     }
 }

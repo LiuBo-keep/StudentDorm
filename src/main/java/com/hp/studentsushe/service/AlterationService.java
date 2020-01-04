@@ -17,4 +17,11 @@ public interface AlterationService {
      * @return int
      */
     public int updateAlteration(String password,String name);
+
+    /**
+     * 修改头像
+     * @param picName
+     * @return
+     */
+    public int updatePic(String picName,HttpSession session);
 }

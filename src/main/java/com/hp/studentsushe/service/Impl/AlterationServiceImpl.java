@@ -1,6 +1,7 @@
 package com.hp.studentsushe.service.Impl;
 
 import com.hp.studentsushe.bean.Student;
+import com.hp.studentsushe.bean.User;
 import com.hp.studentsushe.dao.AlterationDao;
 import com.hp.studentsushe.service.AlterationService;
 import org.slf4j.Logger;
@@ -42,5 +43,23 @@ public class AlterationServiceImpl implements AlterationService {
         log.info(student.toString());
         return alterationDao.updateAlteration(student);
 
+    }
+
+    @Override
+    public int updatePic(String picName,HttpSession session) {
+        Integer role=(Integer)session.getAttribute("Type");
+        log.info("角色是："+role);
+
+        if (role==0){
+            Student student=(Student) session.getAttribute("user");
+            log.info("学生信息："+student);
+            student.setPhoto(picName);
+            return alterationDao.StudentUpdatePhone(student);
+        }else {
+            User user=(User) session.getAttribute("user");
+            log.info("管理员信息："+user);
+            user.setPhoto(picName);
+            return alterationDao.AdminUpdatePhone(user);
+        }
     }
 }

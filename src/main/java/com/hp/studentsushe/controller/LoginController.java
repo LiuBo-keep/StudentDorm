@@ -85,6 +85,8 @@ public class LoginController {
             request.getSession().setAttribute("user",user);
         }
         request.getSession().setAttribute("Type",type);
+        log.info("身份是："+type);
+
         return new JsonResult(1,"登录成功");
     }
 

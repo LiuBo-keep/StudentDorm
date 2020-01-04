@@ -1,6 +1,7 @@
 package com.hp.studentsushe.dao;
 
 import com.hp.studentsushe.bean.Student;
+import com.hp.studentsushe.bean.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -22,9 +23,16 @@ public interface AlterationDao {
     public int updateAlteration(Student student);
 
     /**
-     * 修改头像
+     * 学生修改头像
      * @param student
      * @return
      */
-    public int updatePhone(Student student);
+    public int StudentUpdatePhone(Student student);
+
+    /**
+     * 管理员修改头像
+     * @param user
+     * @return
+     */
+    public int AdminUpdatePhone(User user);
 }

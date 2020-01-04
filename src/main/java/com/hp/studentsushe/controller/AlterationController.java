@@ -87,6 +87,7 @@ public class AlterationController {
                    //用uuid给图片重新命名
                    String uuid=UUID.randomUUID().toString().toLowerCase().replace("-","");
                    String newName=uuid.concat("."+suffix);
+                   log.info("新的文件名="+newName);
 
                    //将文件保存在本地磁盘
                    File file=new File("M:\\photo\\"+newName);
@@ -94,10 +95,18 @@ public class AlterationController {
                        file.mkdirs();//判断文件加是否存，不存在就创建
                    }
 
+                   //将图片名称存到数据库
+                   int count=alterationService.updatePic(newName,session);
+                   if (count<=0){
+                       return new JsonResult(0,"上传失败");
+                   }
+
+                   //将图片存到本地文件夹
                    photo.transferTo(file);
 
-                   Student student=(Student) session.getAttribute("alteration");
-                   log.info(student.toString());
+                   String photoPath ="/photo"+newName;
+                   session.setAttribute("Photo",photoPath);
+
                    return new JsonResult(1,"上传成功");
                }else {
                    return new JsonResult(0,"您上传的文件格式不对，请上传jpg,png,gif,jpeg格式的图片");

@@ -11,4 +11,12 @@
     <update id="updateAlteration" parameterType="com.hp.studentsushe.bean.Student">
         update student set password=#{password} where username=#{username}
     </update>
+
+    <update id="StudentUpdatePhone" parameterType="com.hp.studentsushe.bean.Student">
+        update student set photo=#{photo} where username=#{username}
+    </update>
+
+    <update id="AdminUpdatePhone" parameterType="com.hp.studentsushe.bean.User">
+        update admin set photo=#{photo} where username=#{username}
+    </update>
 </mapper>
