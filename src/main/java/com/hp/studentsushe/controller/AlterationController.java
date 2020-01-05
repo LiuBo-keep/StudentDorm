@@ -76,7 +76,7 @@ public class AlterationController {
      * @return JsonResult
      */
     @PostMapping("/pic")
-    public JsonResult updatePic(MultipartFile photo,
+    public JsonResult updatePic(@RequestParam(value = "photo",required = false) MultipartFile photo,
                                 HttpSession session
     ) throws IOException {
        if (photo!=null){
@@ -104,10 +104,9 @@ public class AlterationController {
                    //将图片存到本地文件夹
                    photo.transferTo(file);
 
-                   String photoPath ="/photo"+newName;
-                   session.setAttribute("Photo",photoPath);
+                   String photoPath ="/photo/"+newName;
 
-                   return new JsonResult(1,"上传成功");
+                   return new JsonResult(1,"上传成功",photoPath);
                }else {
                    return new JsonResult(0,"您上传的文件格式不对，请上传jpg,png,gif,jpeg格式的图片");
                }

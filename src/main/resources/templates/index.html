@@ -204,19 +204,26 @@
             elem3.className="avatar hide";
         }
         function pho() {
-            alert("aaa")
-            var data = $("#photoform").serialize();//序列化，将表单数据组装
+            var formdata=new FormData();
+            formdata.append("photo",$("#changehead").get(0).files[0]);//添加图片信息的参数
+            console.log(formdata);
             $.ajax({
                 type: "post",
                 url: "/Alter/pic",
-                data: data,
+                cache:false,
+                processData: false, // 告诉jQuery不要去处理发送的数据
+                contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+                data: formdata,
                 dataType: "json", //返回数据类型
                 success: function(result){
                     console.log(result);
                     if(1 == result.state){
+                        shang();
                         console.log(result);
                         //修改成功
                         alert(result.message);
+                        document.getElementById("photoImg1").src=result.data;
+                        document.getElementById("photoImg2").src=result.data;
                     } else{
                         console.log(result);
                         alert(result.message);
@@ -311,11 +318,11 @@
             <h3 class="avatar-h3">上传头像</h3>
             <i class="avatar-i" onclick="shang()">x</i>
             <div class="avatar-main">
-                <input type="file" name="photo" class="avatar-input">
+                <input type="file" name="photo" id="changehead" multiple class="avatar-input">
             </div>
             <p class="avatar-p">图片宽度*高度至少为150*150像素，大小不超过2MB</p>
             <div class="aaaaa">
-                <input class="btn btn-default" onclick="pho()" type="button" value="提&nbsp;&nbsp;交"/>
+                <input id = "input_file" class="btn btn-default" onclick="pho()" type="button" value="提&nbsp;&nbsp;交"/>
             </div>
         </form>
     </div>
@@ -415,7 +422,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li class="user-header">
-                                <img src="photo/timg.jpg" class="img-circle" alt="User Image">
+                                <img id="photoImg1" src="photo/timg.jpg" class="img-circle" alt="User Image">
 
                                 <p>
                                     好好学习,天天向上
@@ -455,7 +462,7 @@
 
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="photo/timg.jpg" class="img-circle" alt="User Image">
+                    <img id="photoImg2" src="photo/timg.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p th:text="${session.user.username}"></p>
