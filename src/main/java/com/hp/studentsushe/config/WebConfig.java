@@ -14,6 +14,19 @@ public class WebConfig implements WebMvcConfigurer {
     //访问/login跳转到登录页面
         registry.addViewController("/dorm").setViewName("login");
         registry.addViewController("/index").setViewName("index");
+        registry.addViewController("/geRenXinxiGuanLi").setViewName("geRenXinxiGuanLi");
+        registry.addViewController("/ruZhuXinXiDengJi").setViewName("ruZhuXinXiDengJi");
+        registry.addViewController("/queQinJiLu").setViewName("queQinJiLu");
+        registry.addViewController("/weiXiuXinXi").setViewName("/weiXiuXinXi");
+        registry.addViewController("/weiXiuJiLu").setViewName("weiXiuJiLu");
+        registry.addViewController("/jianYiPingJia").setViewName("jianYiPingJia");
+        registry.addViewController("/xueShengGuanLi").setViewName("xueShengGuanLi");
+        registry.addViewController("/suSheGuanLi").setViewName("suSheGuanLi");
+        registry.addViewController("/XueShengRuzhuDengJi").setViewName("XueShengRuzhuDengJi");
+        registry.addViewController("/xueShengQinShiTiaoHuan").setViewName("xueShengQinShiTiaoHuan");
+        registry.addViewController("/xueShengQianChu").setViewName("xueShengQianChu");
+        registry.addViewController("/qianChuJiLu").setViewName("qianChuJiLu");
+        registry.addViewController("/louYuGuanLi").setViewName("louYuGuanLi");
     }
 
 //    @Override

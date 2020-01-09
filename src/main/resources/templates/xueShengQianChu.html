@@ -160,11 +160,11 @@
             top: -11px;
             left: 588px;
         }
-       .aaaaa{
-           position: relative;
-           top: -13px;
-           left: 582px;
-       }
+        .aaaaa{
+            position: relative;
+            top: -13px;
+            left: 582px;
+        }
         .user-panel>.image>img {
             width: 100%;
             max-width: 45px;
@@ -280,7 +280,7 @@
                         console.log(result);
                         //修改成功
                         alert(result.message+"将跳转到登录页面");
-                         window.setTimeout(doUpdate(),10000);
+                        window.setTimeout(doUpdate(),10000);
                     } else{
                         console.log(result);
                         $("input[name='oldPassword']").val("");//清空验证码输入框
@@ -295,7 +295,7 @@
         }
         //密码修改成功到登录页面
         function doUpdate() {
-             window.location.href="/dorm";
+            window.location.href="/dorm";
         }
     </script>
 </head>
@@ -359,7 +359,7 @@
         </form>
     </div>
 
-<!--主页-->
+    <!--主页-->
     <header class="main-header">
         <a href="#" class="logo">
             <span class="logo-mini"><b>A</b>LT</span>
@@ -569,12 +569,7 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            <div th:if="${session.Type}==0" class="ind">
-                <span>欢迎高校学生登录</span>
-            </div>
-            <div th:if="${session.Type}==1" class="teo">
-                <span>欢迎系统管理员登录</span>
-            </div>
+            学生迁出
         </section>
 
         <section class="content container-fluid">
