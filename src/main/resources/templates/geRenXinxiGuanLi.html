@@ -10,10 +10,16 @@
     <link rel="stylesheet" href="../static/bootstrop/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../static/css/geRenXinxiGuanLi.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
     <style>
+        .header {
+            width: 230px;
+            height: 36.8px;
+        }
+
         .form-paw {
             width: 473px;
             height: 497px;
@@ -100,7 +106,7 @@
             width: 100%;
             height: 721px;
             z-index: 666666;
-            background-color: rgba(0, 0, 0, 0.3);
+            background: rgba(0,0,0,.6);
             position: absolute;
         }
         /*上传头像*/
@@ -569,7 +575,48 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            个人信息管理
+            <div class="aa">
+                <div class="right_cont">
+                    <h3 class="title">个人资料</h3>
+                    <div class="user_info">
+                        <div class="header">
+                            <img src="../static/pic/0.jpg" class="head">
+                            <!-- <p class="modify">头像</p> -->
+                        </div>
+
+                        <div class="right_c">
+                            <div class="right_info">
+                                <span class="id_name">学号：<span th:if="${session.Type==0}" th:text="${session.user.sn}"></span></span>
+                                <a th:href="@{/index}" target="_blank" class="user_home">个人主页</a>
+                            </div>
+                            <div class="csdn_info">
+                        <span style="margin-right: 16px; color: rgb(77, 77, 77); font-size: 14px;">宿舍 43
+                        </span>
+                                <span class="splits">|</span>
+                                <span style="margin-right: 8px; color: rgb(77, 77, 77); font-size: 14px;">舍长 1
+                        </span>
+                            </div>
+                            <div class="line"></div>
+                            <div class="nick">
+                                <span>姓名：<span th:text="${session.user.username}"></span></span>
+                                <span class="mod">修改资料</span>
+                            </div>
+                            <ul class="self">
+                                <li>实名：</li>
+                                <li>性别：男</li>
+                                <li>生日：1995-09-03</li>
+                                <li>地区：中国 天津 和平区</li>
+                                <li>行业：计算机软件</li>
+                                <li>职位：学生</li>
+                                <li>
+                                    <span class="noWid">个性签名：</span>
+                                    <span class="cont">IT永无止境</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="content container-fluid">
