@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../static/bootstrop/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
     <link rel="stylesheet" href="../static/css/geRenXinxiGuanLi.css">
+    <link rel="stylesheet" href="../static/css/xiugaixinxi.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -226,6 +227,17 @@
             var elem2 = document.getElementById("foot");
             elem1.className = "back hide";
             elem2.className = "bacl hide"
+        }
+
+        /*修改信息*/
+        function mod(){
+            var dialog=document.getElementById("dialog");
+            dialog.className="dialog show"
+        }
+
+        function sto() {
+            var dialog=document.getElementById("dialog");
+            dialog.className="dialog hide"
         }
 
         /*上传头像*/
@@ -573,6 +585,19 @@
         </section>
     </aside>
 
+    <!--修改信息-->
+    <div class="dialog hide" id="dialog">
+        <div class="dialog_cont">
+            <div class="boi">
+                <h4 class="boi_a">修改资料</h4>
+                <span class="boi_close" onclick="sto()">x</span>
+            </div>
+            <p class="nick word">
+                <span class="nc">昵称：</span>
+            </p>
+        </div>
+    </div>
+
     <div class="content-wrapper">
         <section class="content-header">
             <div class="aa">
@@ -599,7 +624,7 @@
                             <div class="line"></div>
                             <div class="nick">
                                 <span>姓名：<span th:text="${session.user.username}"></span></span>
-                                <span class="mod">修改资料</span>
+                                <span class="mod" onclick="mod()">修改资料</span>
                             </div>
                             <ul class="self">
                                 <li>实名：</li>
