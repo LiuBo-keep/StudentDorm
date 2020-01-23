@@ -21,7 +21,7 @@ span {
 
 .dialog_cont {
     width: 502px;
-    height: 474px;
+    height: 499px;
     margin: 100px auto;
     background: #fff;
     padding: 16px;
@@ -52,29 +52,75 @@ span {
     text-align: center;
 }
 
-.nick {
-    margin-top: 16px;
-    height: 32px;
-    line-height: 32px;
-}
-
-.word {
-    font-size: 14px;
-    color: #4d4d4d;
-    margin-left: 16px;
-    margin-top: 8px;
-    height: 32px;
-    line-height: 32px;
+.dialog .nick {
+    width: 454px;
+    height: 389px;
     position: relative;
-    top: 12px;
+    top: 20px;
+    left: 5px;
 }
 
-.nc {
-    overflow: hidden;
-    margin-right: 5px;
-    height: 32px;
-    line-height: 32px;
-    float: left;
+.nick form{
+    height: 600px;
+}
+.nick li {
+    width: 453px;
+    height: 45px;
+    border: 1px;
+    line-height: 51px;
+    font-size: 18px;
+    font-family: cursive;
+    font-weight: 700;
+    color: #4d4d4d;
+    list-style: none;
+}
+
+.nick .ddd {
+    position: relative;
+    left: 2px;
+}
+
+.nick input {
+    height: 24px;
+    position: relative;
+    top: -5px;
+    left: 20px;
+}
+
+.nick select {
+    height: 24px;
+    width: 88px;
+    position: relative;
+    top: -5px;
+    left: 20px;
+}
+
+.nick .area {
+    resize: none;
+    width: 373px;
+    height: 54px;
+    line-height: 13px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding-top: 4px;
+    padding-left: 14px;
     font-size: 14px;
     color: #4d4d4d;
+    position: relative;
+    top: -46px;
+    left: 81px;
+}
+
+.nick .ttt {
+    position: relative;
+    top: 29px;
+}
+
+.ttt input {
+    width: 76px;
+    height: 32px;
+    line-height: 25px;
+    font-size: 18px;
+    position: relative;
+    left: 354px;
 }
