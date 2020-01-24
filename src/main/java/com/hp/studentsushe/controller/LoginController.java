@@ -73,6 +73,7 @@ public class LoginController {
             }
             //将学生信息存入session中
             request.getSession().setAttribute("user",student);
+            request.getSession().setAttribute("Student",student);
         }
         if (type==1){
             if (user==null){
@@ -81,8 +82,9 @@ public class LoginController {
             if (!password.equals(user.getPassword())){
                 return new JsonResult(0,"密码错误");
             }
-            //将学生信息存入session中
+            //将管理员信息存入session中
             request.getSession().setAttribute("user",user);
+            request.getSession().setAttribute("Admin",user);
         }
         request.getSession().setAttribute("Type",type);
         log.info("身份是："+type);

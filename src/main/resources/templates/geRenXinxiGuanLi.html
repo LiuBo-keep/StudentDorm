@@ -597,34 +597,34 @@
                     <ul>
                         <li>
                             <span>学号：</span>
-                            <input type="text" name="" placeholder="学号">
+                            <input type="text" name="" placeholder="学号" th:value="${session.Student.sn}">
                         </li>
                         <li>
                             <span>姓名：</span>
-                            <input type="text" name="" placeholder="姓名">
+                            <input type="text" name="" placeholder="姓名" th:value="${session.Student.username}">
                         </li>
                         <li>
                             <span>性别：</span>
-                            <select name="">
+                            <select name="" th:value="${session.Student.sex}">
                                 <option>男</option>
                                 <option>女</option>
                             </select>
                         </li>
                         <li>
                             <span>班级：</span>
-                            <input type="text" name="" placeholder="班级">
+                            <input type="text" name="" placeholder="班级" th:value="${session.Student.clazzId}">
                         </li>
                         <li>
                             <span>宿舍号：</span>
-                            <input class="ddd" type="text" name="" placeholder="宿舍号">
+                            <input class="ddd" type="text" name="" placeholder="宿舍号" th:value="${session.Student.sushe}">
                         </li>
                         <li>
                             <span>床号：</span>
-                            <input type="text" name="" placeholder="学号">
+                            <input type="text" name="" placeholder="床号" th:value="${session.Student.bed}">
                         </li>
                         <li>
                             <span>个性签名：</span>
-                            <textarea maxlength="300" placeholder="300字以内" class="area"></textarea>
+                            <textarea maxlength="300" placeholder="300字以内" class="area" th:value="${session.Student.remark}"></textarea>
                         </li>
                         <li class="ttt">
                             <input type="submit" value="提交">
@@ -652,7 +652,7 @@
                                 <a th:href="@{/index}" target="_blank" class="user_home">个人主页</a>
                             </div>
                             <div class="csdn_info">
-                        <span style="margin-right: 16px; color: rgb(77, 77, 77); font-size: 14px;">宿舍 43
+                        <span style="margin-right: 16px; color: rgb(77, 77, 77); font-size: 14px;">宿舍 <i th:text="${session.Student.sushe}"></i>
                         </span>
                                 <span class="splits">|</span>
                                 <span style="margin-right: 8px; color: rgb(77, 77, 77); font-size: 14px;">舍长 1
@@ -664,14 +664,13 @@
                                 <span class="mod" onclick="mod()">修改资料</span>
                             </div>
                             <ul class="self">
-                                <li>班级：</li>
-                                <li>性别：男</li>
-                                <li>生日：1995-09-03</li>
-                                <li>班级：</li>
+                                <li>班级：<i th:text="${session.Student.clazzId}"></i></li>
+                                <li>性别：<i th:text="${session.Student.sex}"></i></li>
                                 <li>职位：学生</li>
+                                <li>床号：<i th:text="${session.Student.bed}"></i></li>
                                 <li>
                                     <span class="noWid">个性签名：</span>
-                                    <span class="cont">IT永无止境</span>
+                                    <span class="cont"><i th:text="${session.Student.remark}"></i></span>
                                 </li>
                             </ul>
                         </div>
