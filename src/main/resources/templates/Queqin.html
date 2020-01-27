@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/bootstrop/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../static/css/QueQin.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -535,7 +536,7 @@
                     </a>
                 </li>
                 <li th:if="${session.Type}==1">
-                    <a th:href="@{/louYuGuanLi}"><i class="glyphicon glyphicon-align-center"></i> <span>缺勤记录</span>
+                    <a th:href="@{/Queqin}"><i class="glyphicon glyphicon-align-center"></i> <span>缺勤记录</span>
                     </a>
                 </li>
                 <!--<li th:if="${session.Type}==0" class="treeview">-->
@@ -569,7 +570,33 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            楼宇管理
+            <div class="queqin">
+                <div class="queqin-top">
+                    <h3>添加缺勤记录</h3>
+                </div>
+                <div class="queqin-main">
+                    <form>
+                        <ul>
+                            <li>
+                                <i>*</i>
+                                <span>学号：</span><input type="text">
+                            </li>
+                            <li>
+                                <i>*</i>
+                                <span>日期：</span><input type="text">
+                            </li>
+                            <li>
+                                <i>*</i>
+                                <span>备注：</span><input type="text">
+                            </li>
+                            <li>
+                                <input class="queqin-l" type="submit" value="保存">
+                                <input class="queqin-r" type="reset" value="重置">
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <section class="content container-fluid">
