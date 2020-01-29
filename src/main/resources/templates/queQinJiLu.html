@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/bootstrop/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../static/css/mequeqin.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -575,29 +576,41 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            缺勤记录
-            <table width="709" border="1px" cellspacing="0" cellpadding="0">
-                <tr>
-                    <td bgcolor="#D5E4F4">
-                        <strong>缺勤人</strong>
-                    </td>
-                    <td bgcolor="#D5E4F4">
-                        <strong>性别</strong>
-                    </td>
-                    <td bgcolor="#D5E4F4">
-                        <strong>日期</strong>
-                    </td>
-                    <td bgcolor="#D5E4F4">
-                        <strong>备注</strong>
-                    </td>
-                    <td bgcolor="#D5E4F4">
-                        <strong>寝室长</strong>
-                    </td>
-                    <td bgcolor="#D5E4F4">
-                        <strong>登记人</strong>
-                    </td>
-                </tr>
-            </table>
+            <div class="mequeqin">
+                <div class="mequeqin-top">
+                    <h3>我的缺勤记录</h3>
+                </div>
+                <div class="mequeqin-data">
+                    <form>
+                        <span>起始时间：</span>
+                        <input type="date">
+                        &nbsp;
+                        <span>结束时间：</span>
+                        <input type="date">
+                        <input type="submit">
+                    </form>
+                </div>
+                <div class="mequeqin-main">
+                    <form>
+                        <table border="1" cellspacing="0">
+                            <tr>
+                                <th>日期</th>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>寝室</th>
+                                <th>备注</th>
+                            </tr>
+                            <tr>
+                                <td>2020-02-01</td>
+                                <td>1850510408</td>
+                                <td>李四</td>
+                                <td>522</td>
+                                <td>哈哈</td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <section class="content container-fluid">
