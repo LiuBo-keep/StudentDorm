@@ -71,8 +71,9 @@ public class LoginController {
             if (!password.equals(student.getPassword())){
                 return new JsonResult(0,"密码错误");
             }
-            //将学生信息存入session中
+            //将学生信息存入session中,拦截验证
             request.getSession().setAttribute("user",student);
+            //将学生信息存入session中,页面显示
             request.getSession().setAttribute("Student",student);
         }
         if (type==1){
@@ -82,10 +83,12 @@ public class LoginController {
             if (!password.equals(user.getPassword())){
                 return new JsonResult(0,"密码错误");
             }
-            //将管理员信息存入session中
+            //将管理员信息存入session中,拦截验证
             request.getSession().setAttribute("user",user);
+            //将管理员信息存入session中,页面显示
             request.getSession().setAttribute("Admin",user);
         }
+        //将身份信息存入session中
         request.getSession().setAttribute("Type",type);
         log.info("身份是："+type);
 

@@ -475,7 +475,7 @@
                                 <img id="photoImg1" src="photo/timg.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    好好学习,天天向上
+                                    <span th:text="${session.Student.remark}"></span>
                                     <small>Member since Nov. 2012</small>
                                 </p>
                             </li>
@@ -593,41 +593,41 @@
                 <span class="boi_close" onclick="sto()">x</span>
             </div>
             <div class="nick">
-                <form>
+                <form id="xiugaiform" method="get">
                     <ul>
                         <li>
                             <span>学号：</span>
-                            <input type="text" name="" placeholder="学号" th:value="${session.Student.sn}">
+                            <input type="text" 	readonly="readonly" name="xuehao" placeholder="学号" th:value="${session.Student.sn}">
                         </li>
                         <li>
                             <span>姓名：</span>
-                            <input type="text" name="" placeholder="姓名" th:value="${session.Student.username}">
+                            <input type="text" name="xingming" placeholder="姓名" th:value="${session.Student.username}">
                         </li>
                         <li>
                             <span>性别：</span>
-                            <select name="" th:value="${session.Student.sex}">
+                            <select name="xingbie" th:value="${session.Student.sex}">
                                 <option>男</option>
                                 <option>女</option>
                             </select>
                         </li>
                         <li>
                             <span>班级：</span>
-                            <input type="text" name="" placeholder="班级" th:value="${session.Student.clazzId}">
+                            <input type="text" name="nianji" placeholder="班级" th:value="${session.Student.clazzId}">
                         </li>
                         <li>
                             <span>宿舍号：</span>
-                            <input class="ddd" type="text" name="" placeholder="宿舍号" th:value="${session.Student.sushe}">
+                            <input class="ddd" type="text" name="sushe" placeholder="宿舍号" th:value="${session.Student.sushe}">
                         </li>
                         <li>
                             <span>床号：</span>
-                            <input type="text" name="" placeholder="床号" th:value="${session.Student.bed}">
+                            <input type="text" name="chuanghao" placeholder="床号" th:value="${session.Student.bed}">
                         </li>
                         <li>
                             <span>个性签名：</span>
-                            <textarea maxlength="300" placeholder="300字以内" class="area" th:value="${session.Student.remark}"></textarea>
+                            <textarea maxlength="300" name="rema" placeholder="300字以内" class="area" th:value="${session.Student.remark}"></textarea>
                         </li>
                         <li class="ttt">
-                            <input type="submit" value="提交">
+                            <input id="xiugai" type="button" value="提交">
                         </li>
                     </ul>
                 </form>
@@ -758,5 +758,6 @@
 <script src="../static/jquery/jquery-1.11.1.min.js"></script>
 <script src="../static/bootstrop/js/bootstrap.js"></script>
 <script src="../static/bootstrop/js/adminlte.min.js"></script>
+<script src="../static/js/geRenXinxiGuanLi.js"></script>
 </body>
 </html>
