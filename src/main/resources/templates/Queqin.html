@@ -575,22 +575,22 @@
                     <h3>添加缺勤记录</h3>
                 </div>
                 <div class="queqin-main">
-                    <form>
+                    <form id="queqinform" method="post">
                         <ul>
                             <li>
                                 <i>*</i>
-                                <span>学号：</span><input type="text">
+                                <span>学号：</span><input type="text" name="xuehao">
                             </li>
                             <li>
                                 <i>*</i>
-                                <span>日期：</span><input type="text">
+                                <span>日期：</span><input type="text" name="date">
                             </li>
                             <li>
                                 <i>*</i>
-                                <span>备注：</span><input type="text">
+                                <span>备注：</span><input type="text" name="remake">
                             </li>
                             <li>
-                                <input class="queqin-l" type="submit" value="保存">
+                                <input id="queqin" class="queqin-l" type="button" value="保存">
                                 <input class="queqin-r" type="reset" value="重置">
                             </li>
                         </ul>
@@ -676,6 +676,7 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <script src="../static/jquery/jquery-1.11.1.min.js"></script>
+<script src="../static/js/QueQin.js"></script>
 <script src="../static/bootstrop/js/bootstrap.js"></script>
 <script src="../static/bootstrop/js/adminlte.min.js"></script>
 </body>

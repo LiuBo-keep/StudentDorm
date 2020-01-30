@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hp.studentsushe.dao.QueQinDao">
+    <insert id="addQueQin" parameterType="com.hp.studentsushe.bean.QueQin">
+        insert into queqin (sn,username,data,sushe,remake)
+         VALUES (#{sn},#{username},#{data},#{sushe},#{remake})
+    </insert>
+</mapper>

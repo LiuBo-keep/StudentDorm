@@ -23,10 +23,10 @@
                     dataType: "json", //返回数据类型
                     success: function(result){
                         if(1 == result.state){
-                            console.log(result);
+                            // console.log(result);
                               window.parent.location.href="index";
                         } else{
-                           console.log(result);
+                           // console.log(result);
                             alert(result.message);
                             $("#vcodeImg").click();//切换验证码
                             $("input[name='vcode']").val("");//清空验证码输入框
