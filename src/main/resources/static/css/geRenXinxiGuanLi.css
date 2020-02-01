@@ -23,9 +23,9 @@ ul {
     height: 520px;
     float: left;
     background-color: white;
-    position: relative;
-    top: 37px;
-    left: 152px;
+   /* position: relative;
+    top: 7px;
+    left: 72px;*/
 }
 
 .right_cont {

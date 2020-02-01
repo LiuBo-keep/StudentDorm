@@ -468,7 +468,7 @@
                     </li>
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <div class="hidden-xs" th:text="${session.user.username}"></div>
+                            <div class="hidden-xs" th:text="${session.Student.username}"></div>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="user-header">
@@ -515,8 +515,8 @@
                     <img id="photoImg2" src="photo/timg.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p th:text="${session.user.username}"></p>
-                    <div th:if="${session.Type==0}" th:text="${session.user.sn}"></div>
+                    <p th:text="${session.Student.username}"></p>
+                    <div th:if="${session.Type==0}" th:text="${session.Student.sn}"></div>
                 </div>
             </div>
 
@@ -637,7 +637,7 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            <div class="aa">
+            <div class="aa" style="position: relative;top: 7px;left: 72px">
                 <div class="right_cont">
                     <h3 class="title">个人资料</h3>
                     <div class="user_info">
@@ -648,7 +648,7 @@
 
                         <div class="right_c">
                             <div class="right_info">
-                                <span class="id_name">学号：<span th:if="${session.Type==0}" th:text="${session.user.sn}"></span></span>
+                                <span class="id_name">学号：<span th:if="${session.Type==0}" th:text="${session.Student.sn}"></span></span>
                                 <a th:href="@{/index}" target="_blank" class="user_home">个人主页</a>
                             </div>
                             <div class="csdn_info">
@@ -660,7 +660,7 @@
                             </div>
                             <div class="line"></div>
                             <div class="nick">
-                                <span>姓名：<span th:text="${session.user.username}"></span></span>
+                                <span>姓名：<span th:text="${session.Student.username}"></span></span>
                                 <span class="mod" onclick="mod()">修改资料</span>
                             </div>
                             <ul class="self">
