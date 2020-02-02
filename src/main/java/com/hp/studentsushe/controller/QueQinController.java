@@ -3,11 +3,16 @@ package com.hp.studentsushe.controller;
 import com.hp.studentsushe.bean.QueQin;
 import com.hp.studentsushe.service.QueQinService;
 import com.hp.studentsushe.utils.JsonResult;
+import com.hp.studentsushe.vo.Info;
+import com.hp.studentsushe.vo.PageObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/kaoqin")
@@ -44,5 +49,17 @@ public class QueQinController {
         int count=queQinService.addQueQin(queQin);
 
         return new JsonResult(1,"保存成功");
+    }
+
+    /**
+     *
+     * @param info 接收页面信息
+     * @return 返回结果
+     */
+    @PostMapping("/queqinjilu")
+    public JsonResult jilu(Info info){
+        log.info("搜索开始时间："+info.getStart()+"搜索结束时间："+info.getStop());
+        //PageObject<QueQin> pageObject=queQinService.findByData(info);
+        return null;
     }
 }

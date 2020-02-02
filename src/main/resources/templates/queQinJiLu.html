@@ -576,18 +576,18 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            <div class="mequeqin">
+            <div class="mequeqin" style="position: relative;top: 7px;left: 72px">
                 <div class="mequeqin-top">
                     <h3>我的缺勤记录</h3>
                 </div>
                 <div class="mequeqin-data">
-                    <form>
+                    <form id="mequeqinform" name="post">
                         <span>起始时间：</span>
-                        <input type="date">
+                        <input type="date" name="start">
                         &nbsp;
                         <span>结束时间：</span>
-                        <input type="date">
-                        <input type="submit">
+                        <input type="date" name="stop">
+                        <input id="mequeqin" type="button" value="搜索">
                     </form>
                 </div>
                 <div class="mequeqin-main">
@@ -690,6 +690,7 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <script src="../static/jquery/jquery-1.11.1.min.js"></script>
+<script src="../static/js/QueQinJiLu.js"></script>
 <script src="../static/bootstrop/js/bootstrap.js"></script>
 <script src="../static/bootstrop/js/adminlte.min.js"></script>
 </body>

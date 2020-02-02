@@ -7,4 +7,25 @@
         insert into queqin (sn,username,data,sushe,remake)
          VALUES (#{sn},#{username},#{data},#{sushe},#{remake})
     </insert>
+
+    <!--总数-->
+    <select id="findConnt" parameterType="com.hp.studentsushe.vo.Info" resultType="Integer">
+        select count(1) from queqin
+        <where>
+            <if test="start!=null and start!=''">
+                data in (#{start},#{stop})
+            </if>
+        </where>
+    </select>
+
+    <!--结果集-->
+    <select id="findByData" parameterType="com.hp.studentsushe.vo.Info" resultType="com.hp.studentsushe.bean.QueQin">
+        select * from queqin
+        <where>
+            <if test="start!=null and start!=''">
+                data in (#{start},#{stop})
+            </if>
+        </where>
+        limit #{startRow},#{size}
+    </select>
 </mapper>

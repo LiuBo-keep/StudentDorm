@@ -22,6 +22,11 @@ server:
 logging:
   level:
     com.hp.studentsushe.dao: debug
+  pattern:
+    console: d{yyyy-MM-dd} %-2level %logger{50} - %msg%n
+
+
+
 
 
 

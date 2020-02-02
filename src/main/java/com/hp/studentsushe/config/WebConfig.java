@@ -1,6 +1,7 @@
 package com.hp.studentsushe.config;
 
 import com.hp.studentsushe.utils.LoginInterceotorsUtil;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -37,4 +38,9 @@ public class WebConfig implements WebMvcConfigurer {
 //                //对/dorm请求放行
 //                .excludePathPatterns("/dorm","/get_cpacha");
 //    }
+
+    @Bean
+    public DateConverter getDateConverter(){
+        return new DateConverter();
+    }
 }
