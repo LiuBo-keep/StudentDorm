@@ -2,6 +2,8 @@ package com.hp.studentsushe.service;
 
 import com.hp.studentsushe.bean.WeiXiu;
 
+import java.util.List;
+
 public interface WeiXiuService {
     /**
      * 上传维修信息
@@ -9,4 +11,12 @@ public interface WeiXiuService {
      * @return int
      */
     public int shang(WeiXiu weiXiu);
+
+
+    /**
+     * 查询个人维修记录
+     * @param sn 学号
+     * @return
+     */
+    public List<WeiXiu> get(String sn);
 }

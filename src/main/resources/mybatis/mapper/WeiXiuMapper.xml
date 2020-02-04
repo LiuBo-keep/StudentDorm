@@ -8,4 +8,8 @@
         insert into weixiu (sn,addre,obj,phone,status,time,cost)
         values (#{sn},#{addre},#{obj},#{phone},#{status},#{time},#{cost})
     </insert>
+
+    <select id="get" parameterType="String" resultType="com.hp.studentsushe.bean.WeiXiu">
+        select * from weixiu where sn=#{sn}
+    </select>
 </mapper>

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class WeiXiuServiceImpl implements WeiXiuService {
@@ -21,5 +22,10 @@ public class WeiXiuServiceImpl implements WeiXiuService {
         weiXiu.setTime(new Date());
         weiXiu.setCost("0");
         return weiXiuDao.shang(weiXiu);
+    }
+
+    @Override
+    public List<WeiXiu> get(String sn) {
+        return weiXiuDao.get(sn);
     }
 }

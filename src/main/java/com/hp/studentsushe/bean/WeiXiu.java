@@ -18,5 +18,13 @@ public class WeiXiu implements Serializable {
     private String phone; //联系电话
     private String status; //维修状态
     private Date time; //上报时间
-    private String cost; //维修费用
+    private String cost; //
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
 }
