@@ -38,7 +38,7 @@ public class QueQinServiceImpl implements QueQinService {
         PageObject<QueQin> pageObject=new PageObject<QueQin>();
 
         /**设置每页显示条数*/
-        info.setSize(9);
+        info.setSize(5);
 
         if (info.getPageCurrent()!=null){
             pageObject.setPageCurrent(info.getPageCurrent());
@@ -48,6 +48,7 @@ public class QueQinServiceImpl implements QueQinService {
 
         /**总记录数*/
         pageObject.setTotal(queQinDao.findConnt(info));
+        System.out.println(pageObject.getTotal());
 
         /**总页数*/
         if (pageObject.getTotal() % info.getSize()!=0){
@@ -58,6 +59,7 @@ public class QueQinServiceImpl implements QueQinService {
 
         /**结果集*/
         pageObject.setItems(queQinDao.findByData(info));
+        System.out.println(pageObject.getItems());
 
         return pageObject;
     }

@@ -12,8 +12,11 @@
     <select id="findConnt" parameterType="com.hp.studentsushe.vo.Info" resultType="Integer">
         select count(1) from queqin
         <where>
-            <if test="start!=null and start!=''">
-                data in (#{start},#{stop})
+            <if test="sn!=null and sn!=''">
+                sn=#{sn}
+            </if>
+            <if test="start!=null">
+                and data between #{start} and #{stop}
             </if>
         </where>
     </select>
@@ -22,8 +25,11 @@
     <select id="findByData" parameterType="com.hp.studentsushe.vo.Info" resultType="com.hp.studentsushe.bean.QueQin">
         select * from queqin
         <where>
-            <if test="start!=null and start!=''">
-                data in (#{start},#{stop})
+            <if test="sn!=null and sn!=''">
+                sn=#{sn}
+            </if>
+            <if test="start!=null">
+                and data between #{start} and #{stop}
             </if>
         </where>
         limit #{startRow},#{size}

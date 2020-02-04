@@ -1,6 +1,7 @@
 package com.hp.studentsushe.controller;
 
 import com.hp.studentsushe.bean.QueQin;
+import com.hp.studentsushe.bean.Student;
 import com.hp.studentsushe.service.QueQinService;
 import com.hp.studentsushe.utils.JsonResult;
 import com.hp.studentsushe.vo.Info;
@@ -11,7 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -26,7 +29,7 @@ public class QueQinController {
     @PostMapping("/queqin")
     public JsonResult queqin(
             @RequestParam("xuehao") String xuehao,
-            @RequestParam("date") String date,
+            @RequestParam("date") Date date,
             @RequestParam("remake") String remake
     ){
         if (StringUtils.isEmpty(xuehao)){
@@ -57,9 +60,11 @@ public class QueQinController {
      * @return 返回结果
      */
     @PostMapping("/queqinjilu")
-    public JsonResult jilu(Info info){
+    public JsonResult jilu(Info info, HttpSession session){
         log.info("搜索开始时间："+info.getStart()+"搜索结束时间："+info.getStop());
-        //PageObject<QueQin> pageObject=queQinService.findByData(info);
-        return null;
+       /* Student student=(Student) session.getAttribute("Student");
+        info.setSn(student.getSn());*/
+        PageObject<QueQin> pageObject=queQinService.findByData(info);
+        return new JsonResult(1,pageObject);
     }
 }

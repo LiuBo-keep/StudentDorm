@@ -16,7 +16,7 @@ public interface QueQinService {
 
     /**
      * 查询我的考勤
-     * @param list
+     * @param info
      * @return
      */
     public PageObject<QueQin> findByData(Info info);
