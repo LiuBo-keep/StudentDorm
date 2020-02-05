@@ -11,6 +11,11 @@ spring:
 #放行静态资源
   mvc:
     static-path-pattern: /static/**
+#redis
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 1000
 
 mybatis:
 #mapper文件路径

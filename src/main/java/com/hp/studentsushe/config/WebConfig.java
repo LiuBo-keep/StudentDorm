@@ -1,9 +1,8 @@
 package com.hp.studentsushe.config;
 
-import com.hp.studentsushe.utils.LoginInterceotorsUtil;
+import com.hp.studentsushe.Converter.DateConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
