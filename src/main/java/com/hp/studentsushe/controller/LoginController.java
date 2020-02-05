@@ -76,7 +76,11 @@ public class LoginController {
             //将学生信息存入session中,页面显示
             request.getSession().setAttribute("Student",student);
             //将学生头像路径存到session中，页面显示
-            request.getSession().setAttribute("phone","photo/"+student.getPhoto());
+            if (student.getPhoto()!=null){
+                request.getSession().setAttribute("phone","photo/"+student.getPhoto());
+            }else {
+                request.getSession().setAttribute("phone","photo/timg.jfif");
+            }
         }
         if (type==1){
             if (user==null){
@@ -90,7 +94,11 @@ public class LoginController {
             //将管理员信息存入session中,页面显示
             request.getSession().setAttribute("Admin",user);
             //将管理员头像路径存到session中，页面显示
-            request.getSession().setAttribute("phone","photo/"+user.getPhoto());
+            if (user.getPhoto()!=null){
+                request.getSession().setAttribute("phone","photo/"+user.getPhoto());
+            }else {
+                request.getSession().setAttribute("phone","photo/timg.jfif");
+            }
         }
         //将身份信息存入session中
         request.getSession().setAttribute("Type",type);
