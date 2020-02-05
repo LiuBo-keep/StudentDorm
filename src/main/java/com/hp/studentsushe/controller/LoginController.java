@@ -75,6 +75,8 @@ public class LoginController {
             request.getSession().setAttribute("user",student);
             //将学生信息存入session中,页面显示
             request.getSession().setAttribute("Student",student);
+            //将学生头像路径存到session中，页面显示
+            request.getSession().setAttribute("phone","photo/"+student.getPhoto());
         }
         if (type==1){
             if (user==null){
@@ -87,6 +89,8 @@ public class LoginController {
             request.getSession().setAttribute("user",user);
             //将管理员信息存入session中,页面显示
             request.getSession().setAttribute("Admin",user);
+            //将管理员头像路径存到session中，页面显示
+            request.getSession().setAttribute("phone","photo/"+user.getPhoto());
         }
         //将身份信息存入session中
         request.getSession().setAttribute("Type",type);

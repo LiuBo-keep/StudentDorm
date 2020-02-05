@@ -28,7 +28,7 @@ public class GeRenXinXiController {
             @RequestParam("xuehao") String sn,
             @RequestParam("xingming") String username,
             @RequestParam("xingbie") String sex,
-            @RequestParam("nianji") Long clazzId,
+            @RequestParam("nianji") String clazzId,
             @RequestParam("sushe") String sushe,
             @RequestParam("chuanghao") String bed,
             @RequestParam("rema") String remark,

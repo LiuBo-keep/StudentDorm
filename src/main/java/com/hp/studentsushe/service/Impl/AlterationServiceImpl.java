@@ -52,11 +52,13 @@ public class AlterationServiceImpl implements AlterationService {
 
         if (role==0){
             Student student=(Student) session.getAttribute("user");
+            session.setAttribute("phone","photo/"+picName);
             log.info("学生信息："+student);
             student.setPhoto(picName);
             return alterationDao.StudentUpdatePhone(student);
         }else {
             User user=(User) session.getAttribute("user");
+            session.setAttribute("phone","photo/"+picName);
             log.info("管理员信息："+user);
             user.setPhoto(picName);
             return alterationDao.AdminUpdatePhone(user);

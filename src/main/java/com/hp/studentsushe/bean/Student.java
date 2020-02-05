@@ -10,7 +10,7 @@ public class Student implements Serializable {
     private String sn;//学号
     private String username;
     private String password;
-    private Long clazzId;//班级id
+    private String clazzId;//班级id
     private String sushe;//宿舍号
     private String bed;//床号
     private String sex;
@@ -33,11 +33,11 @@ public class Student implements Serializable {
         this.sn = sn;
     }
 
-    public Long getClazzId() {
+    public String getClazzId() {
         return clazzId;
     }
 
-    public void setClazzId(Long clazzId) {
+    public void setClazzId(String clazzId) {
         this.clazzId = clazzId;
     }
 

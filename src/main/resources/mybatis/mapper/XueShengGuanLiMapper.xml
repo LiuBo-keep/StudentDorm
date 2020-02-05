@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hp.studentsushe.dao.XueShengGuanLiDao">
+    <!--总数-->
+    <select id="findConnt" parameterType="com.hp.studentsushe.vo.StudentInfo" resultType="Integer">
+        select count(1) from student
+        <where>
+            <if test="status!=null and status!=''">
+                status=#{status}
+            </if>
+            <if test="username!=null and username!=''">
+                and username=#{username}
+            </if>
+            <if test="sn!=null and sn!=''">
+                and sn=#{sn}
+            </if>
+            <if test="clazz!=null and clazz!=''">
+                and clazz=#{clazz}
+            </if>
+        </where>
+    </select>
+
+    <!--结果集-->
+    <select id="findByData" parameterType="com.hp.studentsushe.vo.StudentInfo" resultType="com.hp.studentsushe.bean.Student">
+        select * from student
+        <where>
+            <if test="status!=null and status!=''">
+                status=#{status}
+            </if>
+            <if test="username!=null and username!=''">
+                and username=#{username}
+            </if>
+            <if test="sn!=null and sn!=''">
+                and sn=#{sn}
+            </if>
+            <if test="clazz!=null and clazz!=''">
+                and clazz=#{clazz}
+            </if>
+        </where>
+        limit #{startRow},#{size} ORDER BY sn DESC
+    </select>
+</mapper>
