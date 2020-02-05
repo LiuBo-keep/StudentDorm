@@ -39,6 +39,6 @@
                 and clazz=#{clazz}
             </if>
         </where>
-        limit #{startRow},#{size} ORDER BY sn DESC
+        limit #{startRow},#{size}
     </select>
 </mapper>
