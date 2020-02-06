@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/bootstrop/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../static/css/qianchu.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -569,7 +570,73 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            学生迁出
+            <div id="qiana" class="qianchu">
+                <div class="qianchu-top">
+                    <h3>学生迁出登记</h3>
+                </div>
+                <div class="qianchu-main">
+                    <form id="qianchu-main-form" method="get">
+                        <i>*</i>
+                        <span>学号：</span><input type="text" name="xuehao">
+                        <input id="quedin" class="queding" type="button" value="确定">
+                    </form>
+                </div>
+            </div>
+
+            <div id="qianb" class="qianchu hide">
+                <div class="qianchu-top">
+                    <h3>学生迁出登记</h3>
+                </div>
+                <p>此功能只适用于毕业的学生迁出，迁出后将不可恢复！ 确定要迁出学生吗？</p>
+                <div class="qianchu-nei">
+                    <form id="qianchu-nei-form" method="post">
+                        <table cellspacing="0">
+                            <tr>
+                                <td height="30" align="right">学生学号：</td>
+                                <td>
+                                    <span th:text="${session.emigration.sn}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right">学生姓名：</td>
+                                <td>
+                                    <span th:text="${session.emigration.username}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right">学生性别：</td>
+                                <td>
+                                    <span th:text="${session.emigration.sex}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right">目前宿舍：</td>
+                                <td>
+                                    <span th:text="${session.emigration.sushe}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right">宿舍床号：</td>
+                                <td>
+                                    <span th:text="${session.emigration.bed}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="40" align="right">迁出备注：</td>
+                                <td>
+                                    <textarea cols="30" rows="5" name="qianremark"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="40" align="center">
+                                    <input id="quedingqianchu" type="button" value="确定迁出">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="button" value="返回上页">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <section class="content container-fluid">
@@ -650,6 +717,7 @@
 </div>
 <script src="../static/jquery/jquery-1.11.1.min.js"></script>
 <script src="../static/bootstrop/js/bootstrap.js"></script>
+<script src="../static/js/qianchu.js"></script>
 <script src="../static/bootstrop/js/adminlte.min.js"></script>
 </body>
 </html>

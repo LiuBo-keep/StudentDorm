@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hp.studentsushe.dao.QianChuDao">
+    <select id="findBysn" parameterType="String" resultType="com.hp.studentsushe.bean.Student">
+        select * from student where sn=#{xuehao}
+    </select>
+
+    <update id="upstudent" parameterType="com.hp.studentsushe.bean.Student">
+        update student set password="",status=#{status},qianRemark=#{qianRemark} where sn=#{sn}
+    </update>
+</mapper>
