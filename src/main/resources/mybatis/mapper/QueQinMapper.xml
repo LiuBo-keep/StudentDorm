@@ -32,6 +32,7 @@
                 and data between #{start} and #{stop}
             </if>
         </where>
+        order by data
         limit #{startRow},#{size}
     </select>
 </mapper>
