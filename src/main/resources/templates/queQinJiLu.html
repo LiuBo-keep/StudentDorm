@@ -209,6 +209,54 @@
             top: 82px;
             left: 306px;
         }
+
+        .page {
+            height: 60px;
+            width: 1000px;
+            /* text-align: center; */
+            /*border: 1px solid;*/
+            position: relative;
+            top: 5px;
+            left: -3px;
+        }
+
+        .page-l {
+            font-size: large;
+            font-family: cursive;
+            font-weight: 800;
+            position: relative;
+            top: 20px;
+            left: 29px;
+        }
+
+        .page-r {
+            float: left;
+            /* border: 1px solid blue; */
+            position: relative;
+            top: 14px;
+            left: 461px;
+        }
+
+        .page-ul{
+            float: left;
+            /* border: 1px solid red; */
+        }
+
+        .page-ul li{
+            width: 30px;
+            height: 30px;
+            margin: 2px;
+            color: #ccc;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid;
+            list-style-type: none;
+            float: left;
+        }
+
+        .page-ul li:hover{
+            color: #7ed6df;
+        }
     </style>
 
     <script type="text/javascript">
@@ -593,15 +641,30 @@
                 <div class="mequeqin-main">
                     <form>
                         <table id="queqintable" border="1" cellspacing="0">
-                            <!--<tr>
-                                <th>日期</th>
-                                <th>学号</th>
-                                <th>姓名</th>
-                                <th>寝室</th>
-                                <th>备注</th>
-                            </tr>-->
+
                         </table>
                     </form>
+                    <!-- 分页结构 -->
+                    <div class="page">
+                        <div class="page-l" id="page_l" style="float: left;">
+                            <span>总共 <span id="total_count">22</span> 条</span>
+                        </div>
+                        <div class="page-r">
+                            <ul id="page_ul" class="page-ul">
+                                <li><</li>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
+                                <li>7</li>
+                                <li>8</li>
+                                <li>9</li>
+                                <li>></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
