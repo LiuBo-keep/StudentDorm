@@ -102,8 +102,6 @@ public class LoginController {
         }
         //将身份信息存入session中
         request.getSession().setAttribute("Type",type);
-        //为迁出做准备的session
-        request.getSession().setAttribute("emigration",new Student());
         log.info("身份是："+type);
 
         return new JsonResult(1,"登录成功");

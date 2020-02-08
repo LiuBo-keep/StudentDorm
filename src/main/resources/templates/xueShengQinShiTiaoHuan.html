@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/bootstrop/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../static/css/QinShiTiaoHuan.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -569,7 +570,73 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            学生寝室调换
+            <div id="tiaoa" class="tiaohuan hide">
+                <div class="tiaohuan-top">
+                    <h3>学生寝室调换</h3>
+                </div>
+                <div class="tiaohuan-main">
+                    <form id="tiaohuan-main-form" method="get">
+                        <i>*</i>
+                        <span>学号：</span><input type="text" name="xuehao">
+                        <input id="quedin" class="queding" type="button" value="确定">
+                    </form>
+                </div>
+            </div>
+            <div id="tiaob" class="tiaohuan">
+                <div class="tiaohuan-top">
+                    <h3>学生寝室调换</h3>
+                </div>
+                <p>此功能只适用于毕业的学生迁出，迁出后将不可恢复！ 确定要迁出学生吗？</p>
+                <div class="tiaohuan-nei">
+                    <form id="tiaohuan-nei-form" method="post">
+                        <table cellspacing="0">
+                            <tr>
+                                <td height="30" align="right">学生学号：</td>
+                                <td>1850510408</td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right">学生姓名：</td>
+                                <td>王五</td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right">学生性别：</td>
+                                <td>男</td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right">目前寝室：</td>
+                                <td>522</td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right">宿舍床号：</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right"><i style="color: red;font-size:10px;position: relative;top: -2px;left: -2px">*</i>调换到寝室：</td>
+                                <td>
+                                    <select>
+                                        <option>请选择</option>
+                                        <option>1</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right"><i style="color: red;font-size:10px;position: relative;top: -2px;left: -2px">*</i>调换到床号：</td>
+                                <td>
+                                    <select>
+                                        <option>请选择</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="40" align="center">
+                                    <input id="quedingqianchu" type="button" value="确定调换">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="button" value="返回上页">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <section class="content container-fluid">

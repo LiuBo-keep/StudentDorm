@@ -24,8 +24,8 @@ public class QianChuController {
             HttpSession session
     ){
         Student student=qianChuService.findBysn(xuehao);
-        session.setAttribute("emigration",student);
-        return new JsonResult(1,"返回");
+        session.setAttribute("emigration",student.getSn());
+        return new JsonResult(1,"学生信息",student);
     }
 
     @PostMapping("/tu")
@@ -33,9 +33,8 @@ public class QianChuController {
             @RequestParam("qianremark") String qianremark,
             HttpSession session
     ){
-        Student student1=(Student) session.getAttribute("emigration");
         Student student=new Student();
-        student.setSn(student1.getSn());
+        student.setSn((String) session.getAttribute("emigration"));
         student.setStatus("迁出");
         student.setQianRemark(qianremark);
         qianChuService.updata(student);

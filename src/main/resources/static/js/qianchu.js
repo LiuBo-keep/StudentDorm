@@ -1,7 +1,7 @@
 $(function () {
     $("#quedin").click(function () {
         var data=$("#qianchu-main-form").serialize();
-        // alert(data);
+        alert(data);
         $.ajax({
             type: "get",
             url: "/emigration/me",
@@ -13,7 +13,18 @@ $(function () {
                     alert("操作失败！");
                 } else {
                     //保存成功
-                    // alert(result.message)
+                    alert(result.state);
+                    console.log(result.message+"==="+result.data.sn);
+                    var sn=document.getElementById("qianchusn");
+                    var username=document.getElementById("qianchuusername");
+                    var sex=document.getElementById("qianchusex");
+                    var sushe=document.getElementById("qianchusushe");
+                    var bed=document.getElementById("qianchubed");
+                    sn.innerText=result.data.sn;
+                    username.innerText=result.data.username;
+                    sex.innerText=result.data.sex;
+                    sushe.innerText=result.data.sushe;
+                    bed.innerText=result.data.bed;
                     var qiana=document.getElementById("qiana");
                     qiana.className="qianchu hide";
                     var qianb=document.getElementById("qianb");
