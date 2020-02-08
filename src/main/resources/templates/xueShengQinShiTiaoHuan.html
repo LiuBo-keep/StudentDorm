@@ -570,7 +570,7 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            <div id="tiaoa" class="tiaohuan hide">
+            <div id="tiaoa" class="tiaohuan">
                 <div class="tiaohuan-top">
                     <h3>学生寝室调换</h3>
                 </div>
@@ -582,7 +582,7 @@
                     </form>
                 </div>
             </div>
-            <div id="tiaob" class="tiaohuan">
+            <div id="tiaob" class="tiaohuan hide">
                 <div class="tiaohuan-top">
                     <h3>学生寝室调换</h3>
                 </div>
@@ -592,38 +592,53 @@
                         <table cellspacing="0">
                             <tr>
                                 <td height="30" align="right">学生学号：</td>
-                                <td>1850510408</td>
+                                <td>
+                                    <span id="tiaosn"></span>
+                                </td>
                             </tr>
                             <tr>
                                 <td height="30" align="right">学生姓名：</td>
-                                <td>王五</td>
+                                <td>
+                                    <span id="tiaousername"></span>
+                                </td>
                             </tr>
                             <tr>
                                 <td height="30" align="right">学生性别：</td>
-                                <td>男</td>
+                                <td>
+                                    <span id="tiaosex"></span>
+                                </td>
                             </tr>
                             <tr>
                                 <td height="30" align="right">目前寝室：</td>
-                                <td>522</td>
+                                <td>
+                                    <span id="tiaosushe"></span>
+                                </td>
                             </tr>
                             <tr>
                                 <td height="30" align="right">宿舍床号：</td>
-                                <td>1</td>
+                                <td>
+                                    <span id="tiaobed"></span>
+                                </td>
                             </tr>
                             <tr>
                                 <td height="30" align="right"><i style="color: red;font-size:10px;position: relative;top: -2px;left: -2px">*</i>调换到寝室：</td>
                                 <td>
-                                    <select>
+                                    <select name="newsushe">
                                         <option>请选择</option>
-                                        <option>1</option>
+                                        <option value="522">522</option>
+                                        <option value="521">521</option>
                                     </select>
                                 </td>
                             </tr>
                             <tr>
                                 <td height="30" align="right"><i style="color: red;font-size:10px;position: relative;top: -2px;left: -2px">*</i>调换到床号：</td>
                                 <td>
-                                    <select>
+                                    <select name="newbed">
                                         <option>请选择</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
                                     </select>
                                 </td>
                             </tr>
@@ -717,6 +732,7 @@
 </div>
 <script src="../static/jquery/jquery-1.11.1.min.js"></script>
 <script src="../static/bootstrop/js/bootstrap.js"></script>
+<script src="../static/js/tiaohuan.js"></script>
 <script src="../static/bootstrop/js/adminlte.min.js"></script>
 </body>
 </html>

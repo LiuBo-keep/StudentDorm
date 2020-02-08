@@ -6,4 +6,6 @@ public interface QianChuService {
     public Student findBysn(String xuehao);
 
     public int updata(Student student);
+
+    public int upsushe(Student student);
 }

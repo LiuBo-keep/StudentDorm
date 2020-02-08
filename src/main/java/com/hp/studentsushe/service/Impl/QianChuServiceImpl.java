@@ -22,4 +22,9 @@ public class QianChuServiceImpl implements QianChuService {
     public int updata(Student student) {
         return qianChuDao.upstudent(student);
     }
+
+    @Override
+    public int upsushe(Student student) {
+        return qianChuDao.upsushe(student);
+    }
 }

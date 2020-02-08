@@ -1,6 +1,6 @@
 $(function () {
     $("#quedin").click(function () {
-        var data=$("#qianchu-main-form").serialize();
+        var data=$("#tiaohuan-main-form").serialize();
         // alert(data);
         $.ajax({
             type: "get",
@@ -15,20 +15,20 @@ $(function () {
                     //保存成功
                     // alert(result.state);
                     console.log(result.message+"==="+result.data.sn);
-                    var sn=document.getElementById("qianchusn");
-                    var username=document.getElementById("qianchuusername");
-                    var sex=document.getElementById("qianchusex");
-                    var sushe=document.getElementById("qianchusushe");
-                    var bed=document.getElementById("qianchubed");
+                    var sn=document.getElementById("tiaosn");
+                    var username=document.getElementById("tiaousername");
+                    var sex=document.getElementById("tiaosex");
+                    var sushe=document.getElementById("tiaosushe");
+                    var bed=document.getElementById("tiaobed");
                     sn.innerText=result.data.sn;
                     username.innerText=result.data.username;
                     sex.innerText=result.data.sex;
                     sushe.innerText=result.data.sushe;
                     bed.innerText=result.data.bed;
-                    var qiana=document.getElementById("qiana");
-                    qiana.className="qianchu hide";
-                    var qianb=document.getElementById("qianb");
-                    qianb.className="qianchu show"
+                    var qiana=document.getElementById("tiaoa");
+                    qiana.className="tiaohuan hide";
+                    var qianb=document.getElementById("tiaob");
+                    qianb.className="tiaohuan show"
                 }
             }
         });
@@ -37,11 +37,11 @@ $(function () {
 
 $(function () {
     $("#quedingqianchu").click(function () {
-        var dat=$("#qianchu-nei-form").serialize();
+        var dat=$("#tiaohuan-nei-form").serialize();
         // alert(dat);
         $.ajax({
             type: "post",
-            url: "/emigration/tu",
+            url: "/emigration/tiao",
             data: dat,
             dataType: "json", //返回数据类型
             success: function(result){
@@ -51,10 +51,10 @@ $(function () {
                 } else {
                     //保存成功
                     alert(result.message);
-                    var qiana=document.getElementById("qiana");
-                    qiana.className="qianchu show";
-                    var qianb=document.getElementById("qianb");
-                    qianb.className="qianchu hide"
+                    var qiana=document.getElementById("tiaoa");
+                    qiana.className="tiaohuan show";
+                    var qianb=document.getElementById("tiaob");
+                    qianb.className="tiaohuan hide"
                 }
             }
         });

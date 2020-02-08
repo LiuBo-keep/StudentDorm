@@ -10,4 +10,6 @@ public interface QianChuDao {
     public Student findBysn(String xuehao);
 
     public int upstudent(Student student);
+
+    public int upsushe(Student student);
 }

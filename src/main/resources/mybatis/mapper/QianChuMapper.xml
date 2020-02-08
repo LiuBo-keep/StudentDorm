@@ -10,4 +10,8 @@
     <update id="upstudent" parameterType="com.hp.studentsushe.bean.Student">
         update student set password="",status=#{status},qianRemark=#{qianRemark} where sn=#{sn}
     </update>
+
+    <update id="upsushe" parameterType="com.hp.studentsushe.bean.Student">
+        update student set sushe=#{sushe},bed=#{bed} where sn=#{sn}
+    </update>
 </mapper>
