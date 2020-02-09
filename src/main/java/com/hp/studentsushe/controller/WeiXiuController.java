@@ -45,9 +45,8 @@ public class WeiXiuController {
     private JsonResult get(
             HttpSession session
     ){
-       // Student student=(Student) session.getAttribute("Student");
-//        List<WeiXiu> list=weiXiuService.get(student.getSn());
-        List<WeiXiu> list=weiXiuService.get("1850510408");
+        Student student=(Student) session.getAttribute("Student");
+        List<WeiXiu> list=weiXiuService.get(student.getSn());
         return new JsonResult(1,list);
     }
 }
