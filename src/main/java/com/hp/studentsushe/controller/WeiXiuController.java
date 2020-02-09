@@ -24,17 +24,21 @@ public class WeiXiuController {
             @RequestParam("phone") String phone,
             HttpSession session
     ){
-//        Student student=(Student) session.getAttribute("Student");
+        Student student=(Student) session.getAttribute("Student");
         WeiXiu weiXiu=new WeiXiu();
-//        weiXiu.setSn(student.getSn());
-        weiXiu.setSn("1850510408");
+        weiXiu.setSn(student.getSn());
+//        weiXiu.setSn("1850510408");
         weiXiu.setAddre(addre);
         weiXiu.setObj(obj);
         weiXiu.setPhone(phone);
 
-        weiXiuService.shang(weiXiu);
+        int count=weiXiuService.shang(weiXiu);
 
-        return new JsonResult(1,"上报成功");
+        if (count==0){
+            return new JsonResult(0,"上报失败");
+        }else {
+            return new JsonResult(1,"上报成功");
+        }
     }
 
     @GetMapping("/chaxun")

@@ -29,11 +29,11 @@ $(function () {
 
 //动态表格
 function formatJsonToSeries(result){
-    console.log(result.data);
+    // console.log(result.data);
     var jsodata=result.data.items;
-    console.log(jsodata.length);
+    // console.log(jsodata.length);
     var queqintable=document.getElementById("queqintable");
-    console.log(queqintable);
+    // console.log(queqintable);
     var ta="<tr>" +
         "<th>日期</th>" +
         "<th>学号</th>" +
@@ -53,6 +53,37 @@ function formatJsonToSeries(result){
             "</tr>"
     }
     queqintable.innerHTML=ta;
+
+    //记录总页数
+    var total_count=document.getElementById("total_count");
+    // console.log(result.data.total);
+    total_count.innerText=result.data.total;
+
+    //分页按钮
+    console.log(result.data)
+    var pageCount=result.data.pageCount;//总页数
+    console.log("总页数"+pageCount);
+    var pageCurrent=result.data.pageCurrent;//当前页码
+    console.log("当前页码"+pageCurrent);
+    if (null==pageCurrent){//如果第一次访问时,设置当前页为1
+        pageCurrent=1;
+        console.log("如果第一次访问时,设置当前页为"+pageCurrent);
+    }
+    var page_ul=document.getElementById("page_ul");
+    console.log(page_ul);
+    var lis="<li id=''><</li>";
+    for (var j=1;j<=pageCount;j++){
+        lis+="<li id=''>"+j+"</li>";
+        if (j==pageCount){
+            lis+="<li id=''>></li>"
+        }
+    }
+
+    page_ul.innerHTML=lis;
+}
+
+function page(){
+
 }
 
 //转换时间格式方法

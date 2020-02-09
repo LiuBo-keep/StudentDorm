@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../static/bootstrop/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../static/bootstrop/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../static/css/weixiu.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -569,7 +570,41 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            维修信息
+            <div class="weixiu">
+                <div class="weixiu-top">
+                    <h3>上报维修信息</h3>
+                </div>
+                <p>此功能只适用于毕业的学生迁出，迁出后将不可恢复！ 确定要迁出学生吗？</p>
+                <div class="weixiu-nei">
+                    <form id="weixiu_form" method="post">
+                        <table border="0" cellspacing="0">
+                            <tr>
+                                <td height="30" align="right"><i style="color: red;">*</i>请输入报修地址：</td>
+                                <td>
+                                    <input style="height: 30px;width: 200px;" type="text" placeholder="报修地址" name="addre">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right"><i style="color: red;">*</i>请描述维修对象：</td>
+                                <td>
+                                    <input style="height: 30px;width: 200px;" type="text" placeholder="维修对象" name="obj">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right"><i style="color: red;">*</i>请输入联系电话：</td>
+                                <td>
+                                    <input style="height: 30px;width: 200px;" type="text" placeholder="联系电话" name="phone">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="40" align="center">
+                                    <input id="shangbao" style="height: 30px;width: 90px" type="button" value="上报信息">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <section class="content container-fluid">
@@ -650,6 +685,7 @@
 </div>
 <script src="../static/jquery/jquery-1.11.1.min.js"></script>
 <script src="../static/bootstrop/js/bootstrap.js"></script>
+<script src="../static/js/weixiu.js"></script>
 <script src="../static/bootstrop/js/adminlte.min.js"></script>
 </body>
 </html>
