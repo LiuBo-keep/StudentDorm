@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/bootstrop/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../static/css/jianyipingjia.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -569,7 +570,34 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            建议评价
+            <div class="jianyi">
+            <div class="Content-Main">
+                <div class="Content-Main1">
+                    <h1>建议评价</h1>
+                </div>
+                <form id="jianyi_form" method="post" class="form-report">
+                    <label>
+                        <span>联系:</span>
+                        <select name="select2" class="select2">
+                            <option value="宿舍">宿舍</option>
+                            <option value="电话">电话</option>
+                        </select>
+                        <input type="text" placeholder="" name="lianxi">
+                    </label>
+                    <label>
+                        <span>信息:</span>
+                        <textarea id="mesaage" name="message" placeholder="建议 评价"></textarea>
+                    </label>
+                    <label>
+                        <span>姓名:</span>
+                        <input type="text" name="username">
+                    </label>
+                    <label>
+                        <input id="tijiao" type="button" class="button" value="提交">
+                    </label>
+                </form>
+            </div>
+            </div>
         </section>
 
         <section class="content container-fluid">
@@ -650,6 +678,7 @@
 </div>
 <script src="../static/jquery/jquery-1.11.1.min.js"></script>
 <script src="../static/bootstrop/js/bootstrap.js"></script>
+<script src="../static/js/jianyipingjia.js"></script>
 <script src="../static/bootstrop/js/adminlte.min.js"></script>
 </body>
 </html>
