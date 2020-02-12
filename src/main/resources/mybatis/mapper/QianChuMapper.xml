@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hp.studentsushe.dao.QianChuDao">
     <select id="findBysn" parameterType="String" resultType="com.hp.studentsushe.bean.Student">
-        select * from student where sn=#{xuehao}
+        select sn,username,sex,clazzId,sushe,bed,status from student where sn=#{xuehao}
     </select>
 
     <update id="upstudent" parameterType="com.hp.studentsushe.bean.Student">
@@ -20,6 +20,6 @@
     </select>
 
     <select id="findByData" parameterType="com.hp.studentsushe.vo.StudentInfo" resultType="com.hp.studentsushe.bean.Student">
-        select qianchuDate,username,sex,clazzId,remark from student where status=#{status}
+        select qianchuDate,username,sex,clazzId,qianRemark from student where status=#{status}
     </select>
 </mapper>

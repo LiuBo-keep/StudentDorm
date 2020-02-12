@@ -24,7 +24,7 @@
 
     <!--结果集-->
     <select id="findByData" parameterType="com.hp.studentsushe.vo.StudentInfo" resultType="com.hp.studentsushe.bean.Student">
-        select * from student
+        select sn,username,sex,clazzId,status from student
         <where>
             <if test="status!=null and status!=''">
                 status=#{status}

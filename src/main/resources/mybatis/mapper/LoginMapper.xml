@@ -8,6 +8,6 @@
     </select>
 
     <select id="StudentLogin" parameterType="String" resultType="com.hp.studentsushe.bean.Student">
-        select * from student where sn=#{username}
+        select sn,username,password,clazzId,sushe,bed,sex,photo,remark from student where sn=#{username}
     </select>
 </mapper>

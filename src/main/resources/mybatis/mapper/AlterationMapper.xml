@@ -5,7 +5,7 @@
 <mapper namespace="com.hp.studentsushe.dao.AlterationDao">
 
     <select id="findPassword" parameterType="String" resultType="com.hp.studentsushe.bean.Student">
-        select * from student where password=#{password}
+        select sn,username,sex,clazzId,sushe,bed,photo,status,remark from student where password=#{password}
     </select>
 
     <update id="updateAlteration" parameterType="com.hp.studentsushe.bean.Student">

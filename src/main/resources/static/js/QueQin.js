@@ -12,7 +12,8 @@ $(function () {
                    alert(result.message);
                } else {
                    //保存成功
-                   alert(result.message)
+                   alert(result.message);
+                   $("input[name='xuehao']").val("");//清空输入框
                }
            }
        });
