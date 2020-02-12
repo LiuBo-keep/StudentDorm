@@ -1,8 +1,9 @@
+//第一次加载时
 $(document).ready(function () {
-    var data=$("#mequeqinform").serialize();
+    var data=$("#xueshengguanli_form").serialize();
     $.ajax({
-        type: "post",
-        url: "/kaoqin/queqinjilu",
+        type: "get",
+        url: "/administrator/xueShengGuanLi",
         data: data,
         dataType: "json", //返回数据类型
         success: function(result){
@@ -10,14 +11,14 @@ $(document).ready(function () {
         }
     });
 });
-
+//点击查询按钮时
 $(function () {
-    $("#mequeqin").click(function () {
-        var data=$("#mequeqinform").serialize();
+    $("#xueshengguanli_buttn").click(function () {
+        var data=$("#xueshengguanli_form").serialize();
         // alert(data);
         $.ajax({
-            type: "post",
-            url: "/kaoqin/queqinjilu",
+            type: "get",
+            url: "/administrator/xueShengGuanLi",
             data: data,
             dataType: "json", //返回数据类型
             success: function(result){
@@ -32,24 +33,25 @@ function formatJsonToSeries(result){
     // console.log(result.data);
     var jsodata=result.data.items;
     // console.log(jsodata.length);
-    var queqintable=document.getElementById("queqintable");
+    var queqintable=document.getElementById("xueShengGuanLi_table");
     // console.log(queqintable);
     var ta="<tr>" +
-        "<th>日期</th>" +
         "<th>学号</th>" +
         "<th>姓名</th>" +
-        "<th>寝室</th>" +
-        "<th>备注</th>" +
+        "<th>性别</th>" +
+        "<th>班级</th>" +
+        "<th>状态</th>" +
+        "<th>操作</th>" +
         "</tr>";
 
     for (var i=0;i<jsodata.length;i++){
         ta+="<tr>" +
-            "<td>"+new Date(jsodata[i].data).format("yyyy-MM-dd")+"</td>"+
-            // "<td>"+jsodata[i].data+"</td>"+
             "<td>"+jsodata[i].sn+"</td>"+
             "<td>"+jsodata[i].username+"</td>"+
-            "<td>"+jsodata[i].sushe+"</td>"+
-            "<td>"+jsodata[i].remake+"</td>"+
+            "<td>"+jsodata[i].sex+"</td>"+
+            "<td>"+jsodata[i].clazzId+"</td>"+
+            "<td>"+jsodata[i].status+"</td>"+
+            "<td><input id='xueshengguanli_up' type='button' value='修改'>&nbsp;<input id='xueshengguanli_del' type='button' value='删除'></td>"+
             "</tr>"
     }
     queqintable.innerHTML=ta;
@@ -80,10 +82,6 @@ function formatJsonToSeries(result){
     }
 
     page_ul.innerHTML=lis;
-}
-
-function page(){
-
 }
 
 //转换时间格式方法

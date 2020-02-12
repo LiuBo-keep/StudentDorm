@@ -21,7 +21,7 @@ public class XueShengGuanLiServiceImpl implements XueShengGuanLiService {
         PageObject<Student> pageObject=new PageObject<Student>();
 
         /**设置每页显示条数*/
-        studentInfo.setSize(3);
+        studentInfo.setSize(10);
 
         if (studentInfo.getPageCurrent()!=null){
             pageObject.setPageCurrent(studentInfo.getPageCurrent());
