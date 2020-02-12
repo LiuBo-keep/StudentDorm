@@ -62,8 +62,8 @@ public class QueQinController {
     @PostMapping("/queqinjilu")
     public JsonResult jilu(Info info, HttpSession session){
         log.info("搜索开始时间："+info.getStart()+"搜索结束时间："+info.getStop());
-       /* Student student=(Student) session.getAttribute("Student");
-        info.setSn(student.getSn());*/
+        Student student=(Student) session.getAttribute("Student");
+        info.setSn(student.getSn());
         PageObject<QueQin> pageObject=queQinService.findByData(info);
         return new JsonResult(1,pageObject);
     }

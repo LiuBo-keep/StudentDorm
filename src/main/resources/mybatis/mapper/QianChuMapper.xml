@@ -8,10 +8,18 @@
     </select>
 
     <update id="upstudent" parameterType="com.hp.studentsushe.bean.Student">
-        update student set password="",status=#{status},qianRemark=#{qianRemark} where sn=#{sn}
+        update student set password="",status=#{status},qianchuDate=#{qianchuDate},qianRemark=#{qianRemark} where sn=#{sn}
     </update>
 
     <update id="upsushe" parameterType="com.hp.studentsushe.bean.Student">
         update student set sushe=#{sushe},bed=#{bed} where sn=#{sn}
     </update>
+
+    <select id="findConnt" parameterType="com.hp.studentsushe.vo.StudentInfo" resultType="Integer">
+        select count(1) from student where status=#{status}
+    </select>
+
+    <select id="findByData" parameterType="com.hp.studentsushe.vo.StudentInfo" resultType="com.hp.studentsushe.bean.Student">
+        select qianchuDate,username,sex,clazzId,remark from student where status=#{status}
+    </select>
 </mapper>
