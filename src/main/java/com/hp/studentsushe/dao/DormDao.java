@@ -12,4 +12,8 @@ public interface DormDao {
     public int findConnt(DormInfo dormInfo);
 
     public List<Dorm> findByData(DormInfo dormInfo);
+
+    public int add(Dorm dorm);
+
+    public Dorm findById(String id);
 }

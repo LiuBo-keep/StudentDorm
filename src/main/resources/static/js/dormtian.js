@@ -16,4 +16,21 @@ $(function () {
         $("input[name='dormMonitor']").val("");
         $("input[name='dormMonitorPhone']").val("");
     });
+
+    $("#dorm_btu").click(function () {
+       var data=$("#dorm_tian_form").serialize();
+       $.ajax({
+           type: "post",
+           url: "/administrator/addDorm",
+           data: data,
+           dataType: "json", //返回数据类型
+           success: function(result){
+               if (0==result.state){
+                   alert(result.message);
+               } else {
+                   alert(result.message);
+               }
+           }
+       })
+    });
 });

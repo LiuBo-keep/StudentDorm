@@ -4,6 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hp.studentsushe.dao.DormDao">
 
+    <insert id="add" parameterType="com.hp.studentsushe.bean.Dorm">
+        insert into dorm (dormId, dormtype, dormMonitor, dormMonitorPhone)
+        values (#{dormId},#{dormType},#{dormMonitor},#{dormMonitorPhone})
+    </insert>
+
+    <select id="findById" parameterType="String" resultType="com.hp.studentsushe.bean.Dorm">
+        select * from dorm where dormId=#{dormId}
+    </select>
+
     <!--总数-->
     <select id="findConnt" parameterType="com.hp.studentsushe.vo.DormInfo" resultType="Integer">
         select count(1) from dorm

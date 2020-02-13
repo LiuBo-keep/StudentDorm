@@ -44,4 +44,14 @@ public class DormServiceImpl implements DormService {
 
         return pageObject;
     }
+
+    @Override
+    public int add(Dorm dorm) {
+        return dormDao.add(dorm);
+    }
+
+    @Override
+    public Dorm findById(String id) {
+        return dormDao.findById(id);
+    }
 }
