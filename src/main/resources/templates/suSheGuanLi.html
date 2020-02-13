@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/bootstrop/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../static/css/dorm.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -201,6 +202,53 @@
             position: relative;
             top: 214px;
             left: 373px;
+        }
+        .page {
+            height: 60px;
+            width: 1000px;
+            /* text-align: center; */
+            /*border: 1px solid;*/
+            position: absolute;
+            top: 451px;
+            left: -3px;
+        }
+
+        .page-l {
+            font-size: large;
+            font-family: cursive;
+            font-weight: 800;
+            position: relative;
+            top: 20px;
+            left: 29px;
+        }
+
+        .page-r {
+            float: left;
+            /* border: 1px solid blue; */
+            position: relative;
+            top: 14px;
+            left: 461px;
+        }
+
+        .page-ul{
+            float: left;
+            /* border: 1px solid red; */
+        }
+
+        .page-ul li{
+            width: 30px;
+            height: 30px;
+            margin: 2px;
+            color: #ccc;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid;
+            list-style-type: none;
+            float: left;
+        }
+
+        .page-ul li:hover{
+            color: #7ed6df;
         }
     </style>
 
@@ -569,7 +617,43 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            宿舍管理
+            <div class="dorm">
+                <div class="dorm-top">
+                    <h3>宿舍管理</h3>
+                </div>
+                <div class="dorm-data">
+                    <form id="dorm_form" name="post">
+                        <span style="position:relative;left:-320px">功能导航：</span>
+                        <span style="position:relative;left:-300px">添加宿舍</span>
+                        <span style="position:relative;left:-185px">查询：</span>
+                        <select name="dorm" style="width: 80px;height: 25px;position:relative;left:-180px">
+                            <option value="">请选择</option>
+                            <option value="寝室">寝室</option>
+                            <option value="舍长">舍长</option>
+                        </select>
+                        <input type="text" name="dorms" style="width: 150px;height: 22px;position:relative;left:-175px">
+                        <input id="dorm_but" type="button" value="点击查询" style="width: 80px;height: 22px;position:relative;left:-170px">
+                    </form>
+                </div>
+                <div class="dorm-main">
+                    <form>
+                        <table id="dorm_table" border="1" cellspacing="0">
+
+                        </table>
+                    </form>
+                    <!-- 分页结构 -->
+                    <div class="page">
+                        <div class="page-l" id="page_l" style="float: left;">
+                            <span>总共 <span id="total_count"></span> 条</span>
+                        </div>
+                        <div class="page-r">
+                            <ul id="page_ul" class="page-ul">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="content container-fluid">
@@ -650,6 +734,7 @@
 </div>
 <script src="../static/jquery/jquery-1.11.1.min.js"></script>
 <script src="../static/bootstrop/js/bootstrap.js"></script>
+<script src="../static/js/dorm.js"></script>
 <script src="../static/bootstrop/js/adminlte.min.js"></script>
 </body>
 </html>
