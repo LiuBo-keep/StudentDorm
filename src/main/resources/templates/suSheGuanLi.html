@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../static/bootstrop/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
     <link rel="stylesheet" href="../static/css/dorm.css">
+    <link rel="stylesheet" href="../static/css/dormtian.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -617,14 +618,14 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            <div class="dorm">
+            <div id="dorm_a" class="dorm">
                 <div class="dorm-top">
                     <h3>宿舍管理</h3>
                 </div>
                 <div class="dorm-data">
                     <form id="dorm_form" name="post">
                         <span style="position:relative;left:-320px">功能导航：</span>
-                        <span style="position:relative;left:-300px">添加宿舍</span>
+                        <span id="dorm_tian" style="position:relative;left:-300px"><a id="dorm_b" href="#" class="aa">添加宿舍</a></span>
                         <span style="position:relative;left:-185px">查询：</span>
                         <select name="dorm" style="width: 80px;height: 25px;position:relative;left:-180px">
                             <option value="">请选择</option>
@@ -651,6 +652,49 @@
 
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dorm_c" class="dorm_tianbackgroud hide">
+                <div class="dorm_tian">
+                    <div class="dorm_tian-top">
+                        <h3>添加宿舍</h3>
+                    </div>
+                    <div class="dorm_tian-nei">
+                        <form>
+                            <table border="0" cellspacing="0">
+                                <tr>
+                                    <td height="30" align="right"><i style="color: red;">*</i>寝室号：</td>
+                                    <td>
+                                        <input style="height: 30px;width: 200px;" type="text" placeholder="寝室号" name="dormId">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="30" align="right"><i style="color: red;">*</i>寝室类型：</td>
+                                    <td>
+                                        <input style="height: 30px;width: 200px;" type="text" placeholder="寝室类型" name="dormType">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="30" align="right"><i style="color: red;">*</i>寝室长：</td>
+                                    <td>
+                                        <input style="height: 30px;width: 200px;" type="text" placeholder="寝室长" name="dormMonitor">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="30" align="right"><i style="color: red;">*</i>寝室长联系电话：</td>
+                                    <td>
+                                        <input style="height: 30px;width: 200px;" type="text" placeholder="寝室长联系电话" name="dormMonitorPhone">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" height="40" align="center">
+                                        <input style="height: 30px;width: 90px" type="button" value="添加宿舍">
+                                        <input id="dorm_black" style="height: 30px;width: 90px" type="button" value="返回上一页">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -735,6 +779,7 @@
 <script src="../static/jquery/jquery-1.11.1.min.js"></script>
 <script src="../static/bootstrop/js/bootstrap.js"></script>
 <script src="../static/js/dorm.js"></script>
+<script src="../static/js/dormtian.js"></script>
 <script src="../static/bootstrop/js/adminlte.min.js"></script>
 </body>
 </html>
