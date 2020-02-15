@@ -1,14 +1,11 @@
 package com.hp.studentsushe.controller;
 
 
-import com.hp.studentsushe.bean.Student;
 import com.hp.studentsushe.bean.YiJian;
 import com.hp.studentsushe.utils.JsonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -16,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class JianYiPingJiaController {
 
     @Autowired
-    private RedisTemplate<Object,YiJian> redisTemplate;
+    private RedisTemplate<Object,Object> redisTemplate;
 
     @PostMapping("/jianyi")
     public JsonResult add(

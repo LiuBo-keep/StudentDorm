@@ -13,9 +13,9 @@ import java.net.UnknownHostException;
 public class RdeisConfig {
 
     @Bean
-    public RedisTemplate<Object, YiJian> redisTemplate(RedisConnectionFactory redisConnectionFactory) throws UnknownHostException {
-        RedisTemplate<Object, YiJian> template = new RedisTemplate();
-        Jackson2JsonRedisSerializer<YiJian> serializer=new Jackson2JsonRedisSerializer<YiJian>(YiJian.class);
+    public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) throws UnknownHostException {
+        RedisTemplate<Object, Object> template = new RedisTemplate();
+        Jackson2JsonRedisSerializer<Object> serializer=new Jackson2JsonRedisSerializer<Object>(Object.class);
         template.setDefaultSerializer(serializer);
         template.setConnectionFactory(redisConnectionFactory);
         return template;

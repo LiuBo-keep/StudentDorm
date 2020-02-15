@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/bootstrop/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../static/bootstrop/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../static/css/ruzhu.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -569,7 +570,40 @@
 
     <div class="content-wrapper">
         <section class="content-header">
-            入住信息登记
+            <div class="ruzhu">
+                <div class="ruzhu-top">
+                    <h3>入住信息登记</h3>
+                </div>
+                <div class="ruzhu-nei">
+                    <form id="ruzhu_form" method="post">
+                        <table border="0" cellspacing="0">
+                            <tr>
+                                <td height="30" align="right"><i style="color: red;">*</i>学号：</td>
+                                <td>
+                                    <input style="height: 30px;width: 200px;" type="text" placeholder="学号" name="sn">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right"><i style="color: red;">*</i>班级：</td>
+                                <td>
+                                    <input style="height: 30px;width: 200px;" type="text" placeholder="班级" name="clazzId">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="30" align="right"><i style="color: red;">*</i>性别：</td>
+                                <td>
+                                    <input style="height: 30px;width: 200px;" type="text" placeholder="性别" name="sex">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" height="40" align="center">
+                                    <input id="ruzhu_btn" style="height: 30px;width: 90px;position: relative ;left: -20px;" type="button" value="保存">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <section class="content container-fluid">
@@ -650,6 +684,7 @@
 </div>
 <script src="../static/jquery/jquery-1.11.1.min.js"></script>
 <script src="../static/bootstrop/js/bootstrap.js"></script>
+<script src="../static/js/ruzhu.js"></script>
 <script src="../static/bootstrop/js/adminlte.min.js"></script>
 </body>
 </html>
